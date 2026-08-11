@@ -71,3 +71,5 @@ Giai đoạn 1: xây dựng đề cương, chọn bộ dữ liệu và triển k
 
 - [Nền tảng và thiết kế nghiên cứu](docs/research-foundation.md): giải thích chi
   tiết bài toán, GAN, ảnh sinh kém, phương pháp đề xuất và kế hoạch thực nghiệm.
+- [Đề cương nghiên cứu](docs/thesis-proposal.md): đề cương khóa luận theo hướng
+  sinh ảnh lỗi công nghiệp có kiểm soát để xử lý mất cân bằng dữ liệu.
