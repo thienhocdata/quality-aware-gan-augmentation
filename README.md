@@ -67,3 +67,7 @@ python scripts/check_environment.py
 
 Giai đoạn 1: xây dựng đề cương, chọn bộ dữ liệu và triển khai baseline.
 
+## Tài liệu nghiên cứu
+
+- [Nền tảng và thiết kế nghiên cứu](docs/research-foundation.md): giải thích chi
+  tiết bài toán, GAN, ảnh sinh kém, phương pháp đề xuất và kế hoạch thực nghiệm.
