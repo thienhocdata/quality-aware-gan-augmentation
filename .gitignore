@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# Notebooks and IDE
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# Secrets
+.env
+*.pem
+
+# Datasets
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/README.md
+
+# Training artifacts
+outputs/checkpoints/**
+outputs/generated/**
+outputs/logs/**
+!outputs/checkpoints/.gitkeep
+!outputs/generated/.gitkeep
+!outputs/logs/.gitkeep
+*.pt
+*.pth
+*.ckpt
+
+# Local experiment tracking
+mlruns/
+wandb/
+
+# Operating systems
+.DS_Store
+Thumbs.db
+
