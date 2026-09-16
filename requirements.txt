@@ -1,0 +1,13 @@
+numpy>=1.26,<3
+pandas>=2.2,<3
+Pillow>=10,<12
+PyYAML>=6,<7
+scikit-learn>=1.4,<2
+torch>=2.3,<3
+torchvision>=0.18,<1
+torchmetrics>=1.4,<2
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+tqdm>=4.66,<5
+pytest>=8,<9
+

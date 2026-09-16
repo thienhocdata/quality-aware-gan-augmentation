@@ -1,0 +1,32 @@
+experiment:
+  name: baseline_gan_seed42
+  seed: 42
+
+data:
+  dataset: null
+  image_size: 64
+  minority_classes: []
+
+gan:
+  architecture: dcgan
+  latent_dim: 128
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.0002
+
+filtering:
+  enabled: false
+  quality_threshold: null
+  duplicate_threshold: null
+
+classifier:
+  architecture: resnet18
+  epochs: 30
+  batch_size: 32
+
+evaluation:
+  primary_metrics:
+    - macro_f1
+    - balanced_accuracy
+    - minority_recall
+
