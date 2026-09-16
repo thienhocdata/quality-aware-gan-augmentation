@@ -1,0 +1,5 @@
+﻿.kaggle/
+*.access_token
+kaggle.json
+__pycache__/
+.ipynb_checkpoints/
