@@ -1,4 +1,16 @@
-# KLTN consolidated saved outputs
+# KLTN archives
+
+## Full archive: notebooks, data, checkpoints and saved outputs
+
+The **3.14 GB full package** is available in [GitHub Releases: KLTN full archive — 2026-10-17](https://github.com/thienhocdata/quality-aware-gan-augmentation/releases/tag/kltn-full-2026-10-17). This is the original `KLTN_clean_WITH_OUTPUTS.zip` (3,136,138,280 bytes), split into two byte-identical parts to meet the per-asset size limit.
+
+Download both `.part01` and `.part02`, `FULL_ARCHIVE_MANIFEST.json`, and `GHEP_FILE.ps1` from the release into the same folder. Run the merge script as described in the release notes. It verifies both parts and reconstructs the original ZIP, including its SHA-256 check.
+
+The full archive contains the notebooks and source, Protocol B data/cache, all 12 M4 models, six Learned-local checkpoints at 7,500/8,000 classifier updates, and the six saved-report sections below. The 7,500→8,000 audit remains **pending** despite the checkpoint inputs being present. The newer endpoint, temperature and geometry reports from 17 October are not included in this frozen archive.
+
+Full ZIP SHA-256: `369f55316659ee27356165c15677274a196f2f48ded13264fa8fef6bed981300`.
+
+## Saved-output-only bundle (24.9 MB)
 
 `KLTN_clean_OUTPUTS_FOR_KAGGLE.zip` is the unchanged saved-output bundle assembled on 17 October 2026. It is 24,861,964 bytes and contains six sections:
 
