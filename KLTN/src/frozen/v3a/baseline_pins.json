@@ -1,0 +1,326 @@
+{
+  "schema": 1,
+  "scope": "Historical full M4 Learned-local V2 baseline, not C-only endpoint ablation",
+  "verified_by": "CPU bytes, metadata, and saved predictions; no TensorFlow restore or inference",
+  "protocol_B_id": "50e988fae260",
+  "checkpoint_bundle_filename": "03_ENDGAME_LEARNED_LOCAL_6_CKPTS.zip",
+  "checkpoint_bundle_sha256": "f14ecf08f2fe6e9efa73608d23e298660fde1a33c8285fd6e8d24e3ddd931903",
+  "seeds": {
+    "42": {
+      "metadata_member": "M4_IP_jobs/final/learned_local/seed_42/state/ckpt_08000/meta.json",
+      "meta_sha256": "cc0f0b8817ea074b30ed3d044cb96f3069c6d591fc4eb345d5d0012880431e42",
+      "contract": {
+        "protocol_B_id": "50e988fae260",
+        "implementation_B": "5e15f8214bf273bb889187b96c80407a8000e5e1a3ef30734bcfa86ced275a6f",
+        "stage": "final",
+        "arm": "learned_local",
+        "seed": 42,
+        "budget_C_updates": 8000,
+        "sha_worker": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+        "train_X_sha256": "26cb18329d396d46e9d639420f5c718ae98c9cd938de5fa6c35240bc6d6227b0",
+        "train_y_sha256": "28d08700b81863a431bf78230196387afe755ee37c4a69a47e871068e7d25921",
+        "schedule_sha256": "3dc843c0c37cd274d48d2e15bbf1d45c1f8778ab21c520a3d724265b03dad9ca",
+        "class_order": [
+          9,
+          7,
+          1,
+          16,
+          13,
+          4,
+          5,
+          8,
+          15,
+          12,
+          6,
+          3,
+          10,
+          14,
+          2,
+          11
+        ],
+        "graph_sha256": [
+          "897ea5ef25df122c27a3d2d0517e7f1608cc58ec036094b22175b575fb83d1c5",
+          "6073a3048064069cbe336a74446b4f8e7436028936d6f6f14e509c84ba21cf4d",
+          "2be82148143a5432568b246f84944108629bfa19de13e7a154a0cde68c4615da",
+          "6f04b5212c9891e29198920aa46a6ce9eaf3e5bc3e1b1f3a13a4baa22d9f2386",
+          "4bb955dbe7470b1885a2e64037d314fc2cdb886932aab27549e803fd2dccd06c",
+          "502079339d960e8c21836af171371eba66d6f7672c6058085893ed9aee09f17b",
+          "472f0dea9da077d5d32d1962bd8e33e4dcaecad81bb7e37f8762688d3f770310",
+          "d9a7c889e25c696ec50c8dc6191a58a45ecb29174ecd042b160ff2bfbc7cca0f",
+          "c593d3014ca45a39712418b3c00a5b5fee4795cebfb475c235c2c0f3e0de730c",
+          "17e5bf0ebcdab873182eb902169c06c7ea72c339151a6307cf8506a487039017",
+          "678f1c578a3b9ccfcb867375bd87fe8541c583810a6c315911e359eb9be753bb",
+          "d3000d40466353ee16a9059f9ff8658b350df6449fe0bfc4855c624e3b61608f",
+          "af0006321a42519a27122a0ce39ef905065881e76eb77b22aa6e59910a3cc2c0",
+          "8ae449d59697957d0e1e50bf5678fe8882ec796775a1556087381ad335bf1d96",
+          "827b8af1010e165a8ac0762dd19520e9fb01b274851c925cf0d1739a536d356d"
+        ],
+        "rho": 0.2,
+        "k": 3,
+        "optimizer_lr": 0.0002,
+        "beta1": 0.5,
+        "batch_size": 100,
+        "tf": "2.20.0",
+        "tf_keras": "2.20.0",
+        "numpy": "2.0.2",
+        "GPU": {
+          "compute_capability": [
+            7,
+            5
+          ],
+          "device_name": "Tesla T4"
+        }
+      },
+      "weights_hashes": {
+        "weights.data-00000-of-00001": "5af9bd48710d98a9a883309506a8cba4365929713927b9aa78ed34842e471415",
+        "weights.index": "3767710c97ee62f2f2fb3b2470f85f8bb2587c71044b7a0a3d8babb243317a7b"
+      },
+      "c_updates": 8000,
+      "next_loop": 4000,
+      "optimizer_clock": 136000,
+      "audit_calls": 136000,
+      "trace_digest": "3bcb9b9225681e85cf512a4ae0431accf9d5a5f46e3597850cfb9ffff63ea961",
+      "classifier_sha256": "7c56b275e3f2115758c78bc4d9a026b4821e757a25fe9472f5b3c20c611beffd",
+      "job_contract_sha256": "2d1f8d23b0d5b4e97eabd3374bb05055024663473f3e7149ba80f30e66c8f021",
+      "route_counts": {
+        "C": 8000,
+        "D": 8000,
+        "GC": 60000,
+        "GD": 60000
+      },
+      "initial_fingerprints_historical": null,
+      "note": "Native file hashes verified locally; model restore is not executed by this script."
+    },
+    "43": {
+      "metadata_member": "M4_IP_jobs/final/learned_local/seed_43/state/ckpt_08000/meta.json",
+      "meta_sha256": "1f9478c8339266746a8218f70b99da4a1948c866fffe2197a011234d77cfc9eb",
+      "contract": {
+        "protocol_B_id": "50e988fae260",
+        "implementation_B": "5e15f8214bf273bb889187b96c80407a8000e5e1a3ef30734bcfa86ced275a6f",
+        "stage": "final",
+        "arm": "learned_local",
+        "seed": 43,
+        "budget_C_updates": 8000,
+        "sha_worker": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+        "train_X_sha256": "26cb18329d396d46e9d639420f5c718ae98c9cd938de5fa6c35240bc6d6227b0",
+        "train_y_sha256": "28d08700b81863a431bf78230196387afe755ee37c4a69a47e871068e7d25921",
+        "schedule_sha256": "362e5a02aa7c7d00ed327b1686d689aca732d7e2cee17fa4990c34237c01f352",
+        "class_order": [
+          9,
+          7,
+          1,
+          16,
+          13,
+          4,
+          5,
+          8,
+          15,
+          12,
+          6,
+          3,
+          10,
+          14,
+          2,
+          11
+        ],
+        "graph_sha256": [
+          "897ea5ef25df122c27a3d2d0517e7f1608cc58ec036094b22175b575fb83d1c5",
+          "6073a3048064069cbe336a74446b4f8e7436028936d6f6f14e509c84ba21cf4d",
+          "2be82148143a5432568b246f84944108629bfa19de13e7a154a0cde68c4615da",
+          "6f04b5212c9891e29198920aa46a6ce9eaf3e5bc3e1b1f3a13a4baa22d9f2386",
+          "4bb955dbe7470b1885a2e64037d314fc2cdb886932aab27549e803fd2dccd06c",
+          "502079339d960e8c21836af171371eba66d6f7672c6058085893ed9aee09f17b",
+          "472f0dea9da077d5d32d1962bd8e33e4dcaecad81bb7e37f8762688d3f770310",
+          "d9a7c889e25c696ec50c8dc6191a58a45ecb29174ecd042b160ff2bfbc7cca0f",
+          "c593d3014ca45a39712418b3c00a5b5fee4795cebfb475c235c2c0f3e0de730c",
+          "17e5bf0ebcdab873182eb902169c06c7ea72c339151a6307cf8506a487039017",
+          "678f1c578a3b9ccfcb867375bd87fe8541c583810a6c315911e359eb9be753bb",
+          "d3000d40466353ee16a9059f9ff8658b350df6449fe0bfc4855c624e3b61608f",
+          "af0006321a42519a27122a0ce39ef905065881e76eb77b22aa6e59910a3cc2c0",
+          "8ae449d59697957d0e1e50bf5678fe8882ec796775a1556087381ad335bf1d96",
+          "827b8af1010e165a8ac0762dd19520e9fb01b274851c925cf0d1739a536d356d"
+        ],
+        "rho": 0.2,
+        "k": 3,
+        "optimizer_lr": 0.0002,
+        "beta1": 0.5,
+        "batch_size": 100,
+        "tf": "2.20.0",
+        "tf_keras": "2.20.1",
+        "numpy": "2.1.3",
+        "GPU": {
+          "compute_capability": [
+            7,
+            5
+          ],
+          "device_name": "Tesla T4"
+        }
+      },
+      "weights_hashes": {
+        "weights.data-00000-of-00001": "97cc8b798f58601872de02cbc3b396a4514821d40f0561b898eec5213fb32cdb",
+        "weights.index": "b96d463087f8ea2dbcf6b1631a293b00d752b8313bf9bb681790ca9fb3ccb9c3"
+      },
+      "c_updates": 8000,
+      "next_loop": 4000,
+      "optimizer_clock": 136000,
+      "audit_calls": 136000,
+      "trace_digest": "6428097d0a7a0b774a2ea5f38f885c16315ee26192a44b0d1f231f5ed6a8b94c",
+      "classifier_sha256": "3901ceebebbbd86e1f1ecdd50e8b261f5cb5573873916d74b4a06de61ee22cd5",
+      "job_contract_sha256": "9102a883e9738f2ef9fe1cfc53e43bbb76e5199448a10825ac2e192950b1e0a7",
+      "route_counts": {
+        "C": 8000,
+        "D": 8000,
+        "GC": 60000,
+        "GD": 60000
+      },
+      "initial_fingerprints_historical": null,
+      "note": "Native file hashes verified locally; model restore is not executed by this script."
+    },
+    "44": {
+      "metadata_member": "M4_IP_jobs/final/learned_local/seed_44/state/ckpt_08000/meta.json",
+      "meta_sha256": "678b69d03feb3c9fabe03e2567c41abc08c961a2a4f82e1bd3c9e96b38105674",
+      "contract": {
+        "protocol_B_id": "50e988fae260",
+        "implementation_B": "5e15f8214bf273bb889187b96c80407a8000e5e1a3ef30734bcfa86ced275a6f",
+        "stage": "final",
+        "arm": "learned_local",
+        "seed": 44,
+        "budget_C_updates": 8000,
+        "sha_worker": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+        "train_X_sha256": "26cb18329d396d46e9d639420f5c718ae98c9cd938de5fa6c35240bc6d6227b0",
+        "train_y_sha256": "28d08700b81863a431bf78230196387afe755ee37c4a69a47e871068e7d25921",
+        "schedule_sha256": "3e3d84540279a0069f5d96e2cc78af37a3974e95d53a053ffc09161fe6b5cff8",
+        "class_order": [
+          9,
+          7,
+          1,
+          16,
+          13,
+          4,
+          5,
+          8,
+          15,
+          12,
+          6,
+          3,
+          10,
+          14,
+          2,
+          11
+        ],
+        "graph_sha256": [
+          "897ea5ef25df122c27a3d2d0517e7f1608cc58ec036094b22175b575fb83d1c5",
+          "6073a3048064069cbe336a74446b4f8e7436028936d6f6f14e509c84ba21cf4d",
+          "2be82148143a5432568b246f84944108629bfa19de13e7a154a0cde68c4615da",
+          "6f04b5212c9891e29198920aa46a6ce9eaf3e5bc3e1b1f3a13a4baa22d9f2386",
+          "4bb955dbe7470b1885a2e64037d314fc2cdb886932aab27549e803fd2dccd06c",
+          "502079339d960e8c21836af171371eba66d6f7672c6058085893ed9aee09f17b",
+          "472f0dea9da077d5d32d1962bd8e33e4dcaecad81bb7e37f8762688d3f770310",
+          "d9a7c889e25c696ec50c8dc6191a58a45ecb29174ecd042b160ff2bfbc7cca0f",
+          "c593d3014ca45a39712418b3c00a5b5fee4795cebfb475c235c2c0f3e0de730c",
+          "17e5bf0ebcdab873182eb902169c06c7ea72c339151a6307cf8506a487039017",
+          "678f1c578a3b9ccfcb867375bd87fe8541c583810a6c315911e359eb9be753bb",
+          "d3000d40466353ee16a9059f9ff8658b350df6449fe0bfc4855c624e3b61608f",
+          "af0006321a42519a27122a0ce39ef905065881e76eb77b22aa6e59910a3cc2c0",
+          "8ae449d59697957d0e1e50bf5678fe8882ec796775a1556087381ad335bf1d96",
+          "827b8af1010e165a8ac0762dd19520e9fb01b274851c925cf0d1739a536d356d"
+        ],
+        "rho": 0.2,
+        "k": 3,
+        "optimizer_lr": 0.0002,
+        "beta1": 0.5,
+        "batch_size": 100,
+        "tf": "2.20.0",
+        "tf_keras": "2.20.1",
+        "numpy": "2.1.3",
+        "GPU": {
+          "compute_capability": [
+            7,
+            5
+          ],
+          "device_name": "Tesla T4"
+        }
+      },
+      "weights_hashes": {
+        "weights.data-00000-of-00001": "8fa310ec1f4c33e397735afe6b13ef4602c0a08c4e696895335fee783a1b0942",
+        "weights.index": "1847a904e5286a56a888f7300f06f17a73e1958fb88103a9cfe0b138aa63c976"
+      },
+      "c_updates": 8000,
+      "next_loop": 4000,
+      "optimizer_clock": 136000,
+      "audit_calls": 136000,
+      "trace_digest": "b10639e76a435b227595e1b2d0c5e6d0994c1f3900d1f6cedb1ec72c90db4c09",
+      "classifier_sha256": "cd3903e97842ec6705cfadbcbb8e8f2befe1a3039a3d7565dec665bea20de342",
+      "job_contract_sha256": "bc52fead2233f9de6c5c4ad8a24a5dfd0c11269a72b77c5d869622adfa2cf037",
+      "route_counts": {
+        "C": 8000,
+        "D": 8000,
+        "GC": 60000,
+        "GD": 60000
+      },
+      "initial_fingerprints_historical": null,
+      "note": "Native file hashes verified locally; model restore is not executed by this script."
+    }
+  },
+  "train": {
+    "npz_sha256": "503898ef73ebf18060813ba51be8cc7b8c57474ed3d22f2fffeb9e8c24075cb6",
+    "sidecar_sha256": "c47211b529bb078382704d3f429e119917ca606a2278f03c20650d5f57157089",
+    "X_array_sha256": "26cb18329d396d46e9d639420f5c718ae98c9cd938de5fa6c35240bc6d6227b0",
+    "y_array_sha256": "28d08700b81863a431bf78230196387afe755ee37c4a69a47e871068e7d25921",
+    "shape": [
+      5528,
+      11,
+      11,
+      40,
+      1
+    ],
+    "dtype": "float32",
+    "labels_native": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "counts_native_label_order": [
+      21,
+      753,
+      426,
+      138,
+      209,
+      376,
+      16,
+      228,
+      10,
+      469,
+      1390,
+      311,
+      125,
+      720,
+      287,
+      49
+    ],
+    "sidecar": {
+      "contract": {
+        "run_id": "50e988fae260",
+        "implementation": "5e15f8214bf273bb889187b96c80407a8000e5e1a3ef30734bcfa86ced275a6f",
+        "kind": "final_train",
+        "coords": "5a94290b0e25f564d7aa2c528beb7f1066550044a7a74261c4539c91602842ef",
+        "preprocessing_sha256": "18167b01cbb8ac5d21ff73a3588cad758d23a2629f9b1c9e47dbaf4cf6989939"
+      },
+      "sha256": "503898ef73ebf18060813ba51be8cc7b8c57474ed3d22f2fffeb9e8c24075cb6"
+    }
+  },
+  "runtime_caution": "Historical seed42 uses tf_keras2.20.0/NumPy2.0.2, seed43/44 tf_keras2.20.1/NumPy2.1.3. Do not assert paired-identical runtime/initialization merely from same integer seed."
+}

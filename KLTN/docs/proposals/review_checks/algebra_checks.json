@@ -1,0 +1,43 @@
+{
+  "kind": "synthetic_numpy_algebra_only",
+  "tensorflow_executed": false,
+  "training_executed": false,
+  "real_data_loaded": false,
+  "parameters": {
+    "A0_output_head": 1243880,
+    "A1_output_heads": 165508,
+    "head_parameter_ratio_A0_over_A1": 7.515527950310559
+  },
+  "low_rank_and_envelope": {
+    "rank_before_envelope": 4,
+    "rank_after_envelope": 4,
+    "delta_norm": 0.2499982841321994,
+    "radius": 0.25,
+    "strict_bound": true
+  },
+  "low_rank_not_spatial_smoothness": {
+    "checkerboard_rank": 1,
+    "neighbor_sign_flips": true
+  },
+  "factor_scaling_symmetry": {
+    "scale_U": 100.0,
+    "scale_V": 0.01,
+    "max_abs_output_difference": 8.881784197001252e-16,
+    "grad_U_norm_ratio": 0.010000000000000002,
+    "grad_V_norm_ratio": 99.99999999999999
+  },
+  "envelope_gain_at_origin_with_epsilon_1e_minus_8": [
+    {
+      "radius": 1.0,
+      "gain": 0.999999995
+    },
+    {
+      "radius": 0.0001,
+      "gain": 0.7071067811865476
+    },
+    {
+      "radius": 1e-08,
+      "gain": 9.999999950000001e-05
+    }
+  ]
+}

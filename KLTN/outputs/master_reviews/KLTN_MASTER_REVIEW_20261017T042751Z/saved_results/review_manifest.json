@@ -1,0 +1,177 @@
+{
+  "mode": "READ_SAVED_RESULTS_CPU",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "test_inference_performed": false,
+  "created_utc": "2026-10-17T04:28:02.097834+00:00",
+  "statuses": {
+    "protocol_b": "SAVED_ORIGINAL_B_RESULTS",
+    "m4_training": "COMPLETE_12_JOBS_AT_8000",
+    "m4_test": "COMPLETE_12_CLASSIFIERS_SAVED_TEST",
+    "classification_diagnostics": "SAVED_POSTHOC_DIAGNOSTICS",
+    "weighting_8000": "COMPLETE_3_SEEDS_AT_8000",
+    "endgame_status": "PENDING_SUCCESSFUL_7500_8000_FORWARD"
+  },
+  "verification": [
+    {
+      "role": "protocol_b",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 201,
+      "uncompressed_bytes": 5281769
+    },
+    {
+      "role": "m4_training",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 110,
+      "uncompressed_bytes": 1030768
+    },
+    {
+      "role": "m4_test",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 59,
+      "uncompressed_bytes": 3081780
+    },
+    {
+      "role": "classification_diagnostics",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 12,
+      "uncompressed_bytes": 339308
+    },
+    {
+      "role": "weighting_8000",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 99,
+      "uncompressed_bytes": 28115753
+    },
+    {
+      "role": "endgame_status",
+      "status": "ALL_MEMBER_SHA256_PASS",
+      "checked_members": 9,
+      "uncompressed_bytes": 3447
+    }
+  ],
+  "tables": {
+    "protocol_b_by_seed": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\01_PROTOCOL_B\\protocol_b_by_seed.csv",
+    "protocol_b_summary": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\01_PROTOCOL_B\\protocol_b_summary_mean_sd.csv",
+    "protocol_b_original_formatted_summary": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\01_PROTOCOL_B\\original_formatted_summary.csv",
+    "training_registry": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\02_M4_TRAINING\\training_registry.csv",
+    "test_by_seed": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\test_by_seed.csv",
+    "test_summary_mean_sd": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\test_summary_mean_sd.csv",
+    "test_per_class_by_seed": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\test_per_class_by_seed.csv",
+    "test_per_class_mean_sd": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\test_per_class_mean_sd.csv",
+    "paired_differences": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\paired_differences.csv",
+    "weighting_recomputed_by_class": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\weighting_recomputed_from_actual_arrays.csv",
+    "weighting_recomputed_seed_summary": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\weighting_equal_class_summary_recomputed.csv",
+    "weighting_seed_summary": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\original_equal_class_seed_summary.csv",
+    "weighting_per_class_saved": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\original_per_class_metrics.csv"
+  },
+  "figures": [
+    "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\macro_f1_by_seed.png",
+    "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\03_M4_SAVED_TEST\\per_class_mean_f1.png",
+    "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\original_figures\\class_seed_diagnostics.png",
+    "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\original_figures\\neighbor_weight_distributions.png",
+    "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\05_V2_WEIGHTING_8000\\original_figures\\weight_vs_patch_noise.png"
+  ],
+  "bundles": {
+    "protocol_b": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\01_PROTOCOL_B_RESULTS.zip",
+      "status": "SAVED_ORIGINAL_B_RESULTS",
+      "sources": {
+        "protocol_b": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\KLTN_HyperGAMO_B_50e988fae260.zip",
+          "bytes": 1408748991,
+          "sha256": "8e586d26e65ecc4ff9567cc864509af7786cb1e32031cca4aae44cad331fd4fe"
+        }
+      },
+      "archive_sha256": "92695c16366496cdd5fc0dc96876d4076508817e74c7e34cf2dfc01783660628"
+    },
+    "m4_training": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\02_M4_TRAINING_RESULTS.zip",
+      "status": "COMPLETE_12_JOBS_AT_8000",
+      "sources": {
+        "seed42_three": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\results (1).zip",
+          "bytes": 338243763,
+          "sha256": "e3756d1daa7f5e79bba4923cf6701a39db0c34865e79af72880b13e3c14bb20c"
+        },
+        "seed42_original": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\M4_IP_final_original_gan_seed42_REPORT.zip",
+          "bytes": 85048727,
+          "sha256": "91211db7c93f348dc4e7decb6e602bee97dbeb17eab75c323df7e822244e1e5c"
+        },
+        "seed43_44": {
+          "path": "C:\\Users\\ADMIN\\Downloads\\results.zip",
+          "bytes": 1239411531,
+          "sha256": "505f1080f05f90a2e430a6b8817def7222534194d4a9aad29d3ec1e4ef6f3e41"
+        }
+      },
+      "archive_sha256": "c9ec7de211a64afc4b4f8af0d861178adeee5f514e075bd071c2e38395112757"
+    },
+    "m4_test": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\03_M4_TEST_RESULTS.zip",
+      "status": "COMPLETE_12_CLASSIFIERS_SAVED_TEST",
+      "sources": {
+        "m4_test": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\M4_IP_TEST_20261016T022123Z_f9775859_REPORT.zip",
+          "bytes": 3029604,
+          "sha256": "96e7f2be7df2139585259ca024e995bb2261ff877ed627fd232879e5f7c94738"
+        }
+      },
+      "archive_sha256": "542cf047ff0e09b7f238a12eab483afac5badb3c3313d5b1d4e9b40c045941c7"
+    },
+    "classification_diagnostics": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\04_V2_CLASSIFICATION_DIAGNOSTICS.zip",
+      "status": "SAVED_POSTHOC_DIAGNOSTICS",
+      "sources": {
+        "classification_diagnostics": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\M4_V2_DIAGNOSTICS_3_SEEDS.zip",
+          "bytes": 255272,
+          "sha256": "ecbb6169fcf26067d6ba49d17b2c30bb8cbb68d3a94cf785f28e6888d1992889"
+        }
+      },
+      "archive_sha256": "28a7051a6cb786fd48ed3e842d9c1921cf2a3bed0fb70dd974734a495113371e"
+    },
+    "weighting_8000": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\05_V2_WEIGHTING_8000.zip",
+      "status": "COMPLETE_3_SEEDS_AT_8000",
+      "sources": {
+        "weighting_8000": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\V2_LEARNED_WEIGHTING_3SEEDS_20261016T114801Z_418a270e.zip",
+          "bytes": 16230885,
+          "sha256": "e90ce74ad1eabac814c1d0ade908ffee9661403a074f19376b4d3e484ecd1a63"
+        }
+      },
+      "archive_sha256": "4b390c7294bdbad32139a9ffbf27c824443556334d55494efe0e91b9d17eecad"
+    },
+    "endgame_status": {
+      "path": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\06_ENDGAME_7500_8000_STATUS.zip",
+      "status": "PENDING_SUCCESSFUL_7500_8000_FORWARD",
+      "sources": {
+        "failed_endgame_1": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\V2_ENDGAME_AUDIT_7500_8000_20261016T140120Z.zip",
+          "bytes": 1087,
+          "sha256": "50b527cedb97630a42da203428b7f65cc1db781cafaf97188ccb5f1052f049b3"
+        },
+        "failed_endgame_2": {
+          "path": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\V2_ENDGAME_AUDIT_7500_8000_20261016T143800Z.zip",
+          "bytes": 1538,
+          "sha256": "b9edaaa64d53878bc7a5a4dd7914cac62be74935e5686678dba5f3af4c1057df"
+        }
+      },
+      "archive_sha256": "2fb38d19b47552007dcedc31dc9d183c255060def9f3b1ebee5df4f44c3c6fdc"
+    }
+  },
+  "limitations": [
+    "B has cross-split spatial patch reuse; this consolidation does not eliminate spatial leakage.",
+    "The Indian Pines test was viewed previously. Further design is post-hoc motivated.",
+    "Three trained seeds are the replication units; test pixels, anchors and noise draws are not independent training runs.",
+    "The weighting report is a final frozen endpoint observation; it does not establish a cause for seed 43 test performance.",
+    "No completed 7500-to-8000 forward report was found. Its six checkpoints exist but the temporal diagnostic remains pending.",
+    "M3 standalone report not located. This does not invalidate or recreate the existing M4 artifacts."
+  ],
+  "paths": {
+    "report_md": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\REPORT.md",
+    "manifest": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\review_manifest.json",
+    "report_zip": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results.zip"
+  }
+}

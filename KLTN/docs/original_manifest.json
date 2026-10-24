@@ -1,0 +1,428 @@
+{
+  "schema": 1,
+  "project": "KLTN_clean",
+  "created_utc": "2026-10-17",
+  "protocol_B_id": "50e988fae260",
+  "m4_worker_sha256": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+  "model_status": {
+    "m4": "SOURCE_LOCKED; original evidence reports finished 12 jobs, raw output not attached",
+    "test": "SOURCE_LOCKED; original evidence reports 12 test classifiers, raw ZIP not attached",
+    "selector_8000": "SOURCE_LOCKED; report documented COMPLETE_3_SEEDS, raw ZIP not attached",
+    "endgame_7500_8000": "PENDING; checkpoint available per inventory, no successful forward report attached",
+    "technical": "SOURCE_LOCKED; PASS report not available"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "size": 4147,
+      "sha256": "5eacaf1fa8fed0cf425e6312e2968f33f7b13a7e96684cae78279d28407e153e",
+      "category": "documentation",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "archive/legacy/KAGGLE_TIEP_TUC_GAN_KHONG_CHAY_B.ipynb",
+      "size": 215794,
+      "sha256": "1eb6b9021153102e8d77adcaaaf72ae454a11d10bdfd1d3d6d7923a7c87bcd26",
+      "category": "original_notebook",
+      "source": "KAGGLE_TIEP_TUC_GAN_KHONG_CHAY_B.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_3D_HyperGAMO_Protocol_B_v2.ipynb",
+      "size": 192115,
+      "sha256": "9424f236de4c2dbbef10d6015be068bf38dd75ce686ae9e8b851e38ab3aac467",
+      "category": "original_notebook",
+      "source": "KLTN_3D_HyperGAMO_Protocol_B_v2.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_KiemChung_RoRiKhongGian_ReviewNhom.ipynb",
+      "size": 573913,
+      "sha256": "1e61b558611332ac58a90de846dff9cc345c0aca76c0c51cf1c8dc241593a7d8",
+      "category": "original_notebook",
+      "source": "KLTN_KiemChung_RoRiKhongGian_ReviewNhom.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_M4_IndianPines_Test_12_Classifiers.ipynb",
+      "size": 47663,
+      "sha256": "47a960de97337266455bcf272448d91e156933ced267b691c7f353a328611204",
+      "category": "original_notebook",
+      "source": "KLTN_M4_IndianPines_Test_12_Classifiers.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_Endgame_7500_8000_FIXED.ipynb",
+      "size": 93203,
+      "sha256": "c82da65ff39c6eedbdf5e755171693b37eee727f6b77940fc0d9aee75d4bc5ef",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_Endpoint_8000_3Seeds_RUNALL.ipynb",
+      "size": 108133,
+      "sha256": "72d22f2107dc9694519758b88b8034a3fa1feff02289ada689016b7ffd59d026",
+      "category": "original_notebook",
+      "source": "KLTN_V2_Endpoint_8000_3Seeds_RUNALL.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Final_Technical_Check.ipynb",
+      "size": 126985,
+      "sha256": "9d73d69228bd08f6716e0539293d484ca64f267fa9333be978b7a7b951eccfb2",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Final_Technical_Check.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Integration_Smoke.ipynb",
+      "size": 59367,
+      "sha256": "b9eb7f4f8b07c0fd40dbf3a8dcc3c9d36ff404d0e522fcc1a6e97ac5eb725ec8",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Integration_Smoke.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Matched_Runner_Check.ipynb",
+      "size": 112289,
+      "sha256": "035a5290414aa155d5022254a49d49d46e0e2964e9f456b83dacac4ccaf7b0c3",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Matched_Runner_Check.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb",
+      "size": 125492,
+      "sha256": "1f74b169849012dd0c2e9c36c5d3799addd8b1d3e4184d6670434c7523e7af3c",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Moc4_Group_Seed43_44_Kaggle.ipynb",
+      "size": 121902,
+      "sha256": "8a0a569b0a0d3bc47d834d34f9251465a542bd87180b47ff95465fa1a45a644b",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Moc4_Group_Seed43_44_Kaggle.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_IndianPines_Moc4_Seed42_3Arms_Remaining_Kaggle.ipynb",
+      "size": 121400,
+      "sha256": "370bba479e99277d7b4849a8a9d03a01e8521292eed0f38e5690f27091195054",
+      "category": "original_notebook",
+      "source": "KLTN_V2_IndianPines_Moc4_Seed42_3Arms_Remaining_Kaggle.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/KLTN_V2_LearnedWeighting_3Seeds_TrainOnly.ipynb",
+      "size": 94145,
+      "sha256": "925e770d3b587d96407dcd35429ee144402289112dd2ab5d7f9bdfb4b2b02348",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "archive/legacy/M4_V2_diagnostics_3_seeds_CPU.ipynb",
+      "size": 14762,
+      "sha256": "87bdcdca6844f35ba1a727b7a15a3147c4e2f7ef37adb3fa5a9a9ff585a15692",
+      "category": "original_notebook",
+      "source": "M4_V2_diagnostics_3_seeds_CPU.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "archive/legacy/M5_V2_CPU_analysis.ipynb",
+      "size": 20557,
+      "sha256": "b5df5b542f61c42405a6fd3f17853b55e63af9fc8af6536d03661bc83875228b",
+      "category": "original_notebook",
+      "source": "M5_V2_CPU_analysis.ipynb",
+      "notes": "Unmodified original, kept for audit and recovery."
+    },
+    {
+      "path": "checkpoints/README.md",
+      "size": 88,
+      "sha256": "fc46cf04d151e19b78dfc4281dc3928b25d854b2f5896cda94329ee7e2ac7010",
+      "category": "documentation",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "data/README.md",
+      "size": 150,
+      "sha256": "18bd0549dd8423dfeb1a52d7c4238cbf1b1b9a5440cbaed9f67fd5d383a09962",
+      "category": "documentation",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "docs/migration.md",
+      "size": 1677,
+      "sha256": "1f6806db6542215f46a4dcd9f3663b352053d5a98e8985a08cc90152d3d812b1",
+      "category": "documentation",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "docs/protocol_review.md",
+      "size": 17146,
+      "sha256": "3b6a18c407b4b6aeb76a2e81b15898f9be81798a917d830b4369e1629c7531ea",
+      "category": "original_document",
+      "source": "KLTN_Protocol_B_Review_2026-10-05.md",
+      "notes": null
+    },
+    {
+      "path": "docs/scope.md",
+      "size": 12134,
+      "sha256": "d9f5df24edaef5bb2e7a4021bbdab0c35542f13b911b13f1bac4771552e420bc",
+      "category": "original_document",
+      "source": "Pasted text(4).txt",
+      "notes": null
+    },
+    {
+      "path": "inputs.json",
+      "size": 140,
+      "sha256": "5c11374905d96456c313b28c597c6d87ae7148253ec21ea56da334b924eb45d1",
+      "category": "project_config",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/hypergamo.ipynb",
+      "size": 4784,
+      "sha256": "2b491cb2ebda73eb665f7b0b2026f936541818cbdf057bf3313fb03a02203332",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/m4.ipynb",
+      "size": 4997,
+      "sha256": "84fb8ddb3a65a9b93f8fac4efaa58c691f495f24841f6849912d942c0ec7f813",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/protocol_b.ipynb",
+      "size": 5395,
+      "sha256": "06fe4c70909d4e89fe80a9fca5e52b6de3d21527f36ae77f72967812802ffece",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/selector.ipynb",
+      "size": 5760,
+      "sha256": "315eb3288ee735f8fc6ab4322311f540bd1326a418376209f6c7372a7d6d2dbc",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/test.ipynb",
+      "size": 5882,
+      "sha256": "0fa81632fd27cd1681ac44367d49e46adfc4dfd4e427cb9888fcea3b122c07b1",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "notebooks/v2.ipynb",
+      "size": 4687,
+      "sha256": "7eb00a88eb0d27995dc2e8ccdb7261807392396caf8d5322a687dfd025406a2f",
+      "category": "cpu_notebook",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "outputs/README.md",
+      "size": 92,
+      "sha256": "307b0befc1d9d62d661230a89fa17c07cf794652a9812fa6203b1d5872315c26",
+      "category": "documentation",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "src/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "cpu_helper",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "src/__pycache__/__init__.cpython-313.pyc",
+      "size": 133,
+      "sha256": "146c35aa222fa609bfedfd85c278a1904b486254865c78960e720c490c814c04",
+      "category": "cpu_helper",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "src/__pycache__/audit.cpython-313.pyc",
+      "size": 15631,
+      "sha256": "ae037cb7a0337585f3c0f231aad9058f89060d5b82b218679ef11b0c16959425",
+      "category": "cpu_helper",
+      "source": null,
+      "notes": null
+    },
+    {
+      "path": "src/audit.py",
+      "size": 6996,
+      "sha256": "111ef3b71ab29ac9e9cf723a997db1cb82837980e09668a9404c22521eba2e7b",
+      "category": "cpu_helper",
+      "source": null,
+      "notes": "CPU-only, no model imports or train/test execution."
+    },
+    {
+      "path": "src/frozen/endgame.py",
+      "size": 85325,
+      "sha256": "5e171cb7712c2569c99bfe957b375756e95c26d26243ed9cf8dccbd4f3a1a9a4",
+      "category": "locked_selector",
+      "source": "KLTN_V2_Endgame_7500_8000_FIXED.ipynb cells [1, 3, 5, 7, 9]",
+      "notes": "Definition-only snapshot; auto-execution cell excluded."
+    },
+    {
+      "path": "src/frozen/endpoint.py",
+      "size": 101859,
+      "sha256": "7c92c021459b825271aedee161194cde374b0867bb442421f645fd62e9d8048e",
+      "category": "locked_selector",
+      "source": "KLTN_V2_Endpoint_8000_3Seeds_RUNALL.ipynb cells [1, 3, 5, 7, 9, 10]",
+      "notes": "Definition-only snapshot; auto-execution cell excluded."
+    },
+    {
+      "path": "src/frozen/group_launcher.py",
+      "size": 14784,
+      "sha256": "b3ba6bdd83a53609b426cc1cb7690daec774f2ca36307bc317f0b6ede05cb99d",
+      "category": "locked_launcher",
+      "source": "KLTN_V2_IndianPines_Moc4_Group_Seed43_44_Kaggle.ipynb cell 5",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/m4.py",
+      "size": 82376,
+      "sha256": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+      "category": "locked_worker",
+      "source": "KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb cell 3; WORKER_SOURCE",
+      "notes": "Exact embedded worker bytes. Explicit execution only."
+    },
+    {
+      "path": "src/frozen/runner.py",
+      "size": 68661,
+      "sha256": "3ac45bc3d22905904cd66a1f66ec03839192fb48a1af01f55528506dd4cd7992",
+      "category": "locked_worker",
+      "source": "KLTN_V2_IndianPines_Matched_Runner_Check.ipynb cell 3; WORKER_SOURCE",
+      "notes": "Exact embedded worker bytes. Explicit execution only."
+    },
+    {
+      "path": "src/frozen/runner_launcher.py",
+      "size": 19052,
+      "sha256": "7a0813d1dbb0d6cdf5852a0fe9b70730f719d97d832795bb29dfe5ed58952948",
+      "category": "locked_launcher",
+      "source": "KLTN_V2_IndianPines_Matched_Runner_Check.ipynb cell 4",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/smoke.py",
+      "size": 34001,
+      "sha256": "dfdb2c59d4905c1504dc090eacd93965fc077d0543c3cd319d2923472d5713b7",
+      "category": "locked_worker",
+      "source": "KLTN_V2_IndianPines_Integration_Smoke.ipynb cell 3; WORKER_SOURCE",
+      "notes": "Exact embedded worker bytes. Explicit execution only."
+    },
+    {
+      "path": "src/frozen/smoke_launcher.py",
+      "size": 10182,
+      "sha256": "0ae236a0c9760ebf6cb1ff6f95239a54dd48e5521355f7e6731929e1cbecc24c",
+      "category": "locked_launcher",
+      "source": "KLTN_V2_IndianPines_Integration_Smoke.ipynb cell 4",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/technical.py",
+      "size": 75813,
+      "sha256": "1024fd19899d0ebecc8eae76b721333e3c63f2d8e5b0c04d4bf151ceb5ccb116",
+      "category": "locked_worker",
+      "source": "KLTN_V2_IndianPines_Final_Technical_Check.ipynb cell 3; WORKER_SOURCE",
+      "notes": "Exact embedded worker bytes. Explicit execution only."
+    },
+    {
+      "path": "src/frozen/technical_launcher.py",
+      "size": 24507,
+      "sha256": "030f8d9be7b38a610005fa60283ab66438eab1c9461157448294c6803de1b351",
+      "category": "locked_launcher",
+      "source": "KLTN_V2_IndianPines_Final_Technical_Check.ipynb cell 4",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/test.py",
+      "size": 28786,
+      "sha256": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9",
+      "category": "locked_worker",
+      "source": "KLTN_M4_IndianPines_Test_12_Classifiers.ipynb cell 3; TEST_WORKER_SOURCE",
+      "notes": "Exact embedded worker bytes. Explicit execution only."
+    },
+    {
+      "path": "src/frozen/test_gate.py",
+      "size": 9353,
+      "sha256": "dd869905f57502defba45223aa0e9b5282fa3176527ef8b3ab099f5349f15d1c",
+      "category": "locked_source",
+      "source": "KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb cell 7",
+      "notes": "Original source; requires historical globals. Never imported in default workflow."
+    },
+    {
+      "path": "src/frozen/test_launcher.py",
+      "size": 6476,
+      "sha256": "669978fcb5243a00977b8360549940633f0fbb6ffb6768cb154b41339f10f219",
+      "category": "locked_launcher",
+      "source": "KLTN_M4_IndianPines_Test_12_Classifiers.ipynb cell 4",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/train_launcher.py",
+      "size": 7352,
+      "sha256": "80e82e711c85a24e83ea51675023c5c9a15a042bb2b141899d22a2faca5ec3da",
+      "category": "locked_launcher",
+      "source": "KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb cell 5",
+      "notes": "Launcher snapshot; not imported by CPU notebooks."
+    },
+    {
+      "path": "src/frozen/weighting.py",
+      "size": 81712,
+      "sha256": "131304f6155b56b04be601d888755445dafd332839d0d6d14c68a102fead872f",
+      "category": "locked_selector",
+      "source": "KLTN_V2_LearnedWeighting_3Seeds_TrainOnly.ipynb cells [2, 4, 6, 8, 10, 12]",
+      "notes": "Definition-only snapshot; auto-execution cell excluded."
+    },
+    {
+      "path": "src/results.py",
+      "size": 3261,
+      "sha256": "207da27a8c1b39f95066c8d711f33e645edda85b1cb7d453c3a9550ddf1392e0",
+      "category": "cpu_helper",
+      "source": null,
+      "notes": null
+    }
+  ],
+  "duplicates": [
+    {
+      "name": "KLTN_V2_Endgame_7500_8000_FIXED.ipynb",
+      "duplicate_of": "KLTN_V2_Endgame_7500_8000_FIXED(1).ipynb",
+      "sha256": "c82da65ff39c6eedbdf5e755171693b37eee727f6b77940fc0d9aee75d4bc5ef"
+    },
+    {
+      "name": "KLTN_V2_LearnedWeighting_3Seeds_TrainOnly.ipynb",
+      "duplicate_of": "KLTN_V2_LearnedWeighting_3Seeds_TrainOnly(1).ipynb",
+      "sha256": "925e770d3b587d96407dcd35429ee144402289112dd2ab5d7f9bdfb4b2b02348"
+    }
+  ],
+  "inputs_not_included": [
+    "KLTN_HyperGAMO_B_50e988fae260.zip",
+    "M4_IP_final_original_gan_seed42_REPORT.zip",
+    "results (1).zip",
+    "results.zip",
+    "M4_IP_TEST_20261016T022123Z_f9775859_REPORT.zip",
+    "V2_LEARNED_WEIGHTING_3SEEDS_20261016T114801Z_418a270e.zip"
+  ]
+}

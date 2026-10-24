@@ -1,0 +1,11 @@
+{
+  "v3a_worker.py": "d1d2105a63153f0c1e5859a31ca81611d65e4a1feee551e1bbfa299d04d315f7",
+  "v3a_orchestrator.py": "6a648c1024369d54ba3c357a85a2672d88a56f747d546c347d93973282cf71db",
+  "m4_training_worker_frozen.py": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+  "baseline_pins.json": "8d51410ddf4867f81d24e9b1fb6b26a89ef819ec71fc569a0cdadad7bfc78bac",
+  "baseline_test_results.json": "ec9283682353a70e4122d9ed536af52044f01fc09d9a33135c82105b9da0db80",
+  "README.md": "24b37a1a04cfda5b17e3a34d0b81c120c91591e7f740cbd6c5ff27c4115503cd",
+  "original_m4_seed42_meta.json": "cc0f0b8817ea074b30ed3d044cb96f3069c6d591fc4eb345d5d0012880431e42",
+  "original_m4_seed43_meta.json": "1f9478c8339266746a8218f70b99da4a1948c866fffe2197a011234d77cfc9eb",
+  "original_m4_seed44_meta.json": "678b69d03feb3c9fabe03e2567c41abc08c961a2a4f82e1bd3c9e96b38105674"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PENDING_SUCCESSFUL_7500_8000_FORWARD",
+  "complete": false,
+  "checkpoint_availability": {
+    "7500": [
+      42,
+      43,
+      44
+    ],
+    "8000": [
+      42,
+      43,
+      44
+    ]
+  },
+  "known_failure": "Two historical audit reports stopped during checkpoint input discovery. They contain no successful temporal diagnostic.",
+  "no_training_required": true,
+  "next_optional_action": "Verified train-only frozen G/head forward at six checkpoints; no model fitting and no test or validation."
+}

@@ -1,4 +1,29 @@
-# Quality-Aware GAN Augmentation
+# KLTN — 3D-HyperGAMO trên Indian Pines
+
+Bộ nghiên cứu đã tổng hợp, cập nhật ngày **24/10/2026**:
+
+- [Toàn bộ source, notebook, tài liệu và output nhẹ](KLTN/).
+- [Notebook tổng hợp hiện hành, có output đã lưu](KLTN/notebooks/00_MASTER_CURRENT.ipynb).
+- [Tải bản đầy đủ gồm dữ liệu và checkpoint](https://github.com/thienhocdata/quality-aware-gan-augmentation/releases/tag/kltn-complete-2026-10-24).
+- [Danh mục từng file và SHA-256](KLTN/PUBLICATION_MANIFEST_2026-10-24.json).
+- [Đề xuất kiến trúc mới và phụ lục v1.0](KLTN/docs/proposals/) — đang ở trạng thái đề xuất, chưa train.
+
+Source thực thi Protocol B, M4/V2, selector endpoint và V3-A được bảo tồn cùng
+kết quả/provenance. Git chứa source và báo cáo nhẹ; Release chứa bản đầy đủ có
+cache Protocol B, 12 model M4, 6 checkpoint Learned-local 7.500/8.000 và 12 classifier.
+Tải hai phần và ghép theo hướng dẫn trong Release để có ZIP đầy đủ.
+
+[Hướng dẫn phạm vi và trạng thái bằng chứng](KLTN/README_RELEASE_2026-10-24.md):
+Endgame còn thiếu báo cáo forward hoàn tất, và báo cáo M3 riêng chưa xác định.
+Các gói endpoint/V3-A là output phân tích đã tổng hợp, không phải mọi backup
+thô lịch sử. Lần xuất bản không train hoặc chạy lại test.
+
+Các thư mục ngoài `KLTN/` bên dưới được giữ lại từ giai đoạn đề cương trước;
+đọc `KLTN/` để theo dõi trục nghiên cứu hiện hành.
+
+---
+
+## Đề cương giai đoạn trước — Quality-Aware GAN Augmentation
 
 Nghiên cứu tăng cường dữ liệu lớp thiểu số bằng GAN có kiểm soát chất lượng cho
 bài toán phân loại ảnh mất cân bằng.

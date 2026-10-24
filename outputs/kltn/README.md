@@ -1,5 +1,13 @@
 # KLTN archives
 
+## Current consolidated package — 24 October 2026
+
+Use [the current full Release](https://github.com/thienhocdata/quality-aware-gan-augmentation/releases/tag/kltn-complete-2026-10-24)
+for the latest consolidated source, notebooks, outputs, Protocol B data and M4 checkpoints.
+The [browsable project](../../KLTN/) also includes the endpoint/V3-A analyses and
+the proposed architecture documents added after the frozen 17 October package.
+The older archives below remain unchanged historical snapshots.
+
 ## Full archive: notebooks, data, checkpoints and saved outputs
 
 The **3.14 GB full package** is available in [GitHub Releases: KLTN full archive — 2026-10-17](https://github.com/thienhocdata/quality-aware-gan-augmentation/releases/tag/kltn-full-2026-10-17). This is the original `KLTN_clean_WITH_OUTPUTS.zip` (3,136,138,280 bytes), split into two byte-identical parts to meet the per-asset size limit.

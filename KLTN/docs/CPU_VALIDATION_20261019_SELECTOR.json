@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-19",
+  "status": "CPU_ALL_CELLS_PASS",
+  "notebook": "notebooks/selector.ipynb",
+  "notebook_sha256": "c5eed648b62f12d4165cc7c8ef27687c5a88969615945bf87bd34fdd9fde05d5",
+  "code_cells": [
+    {
+      "index": 1,
+      "id": "614e0612",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 3,
+      "id": "ad33c978",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 5,
+      "id": "b46203bd",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 7,
+      "id": "57f7c22b",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 9,
+      "id": "f074a7f6",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 11,
+      "id": "13822fd3",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 13,
+      "id": "bcc72a02",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 16,
+      "id": "phase6-load-bundle",
+      "status": "PASS",
+      "outputs": 1
+    },
+    {
+      "index": 17,
+      "id": "phase6-m4-results",
+      "status": "PASS",
+      "outputs": 3
+    },
+    {
+      "index": 18,
+      "id": "phase6-endpoint-results",
+      "status": "PASS",
+      "outputs": 3
+    },
+    {
+      "index": 19,
+      "id": "phase6-class-results",
+      "status": "PASS",
+      "outputs": 2
+    },
+    {
+      "index": 21,
+      "id": "phase6-cpu-boundary",
+      "status": "PASS",
+      "outputs": 1
+    }
+  ],
+  "total_cells": 22,
+  "frozen_source_files_verified": 15,
+  "frozen_source_unchanged": true,
+  "new_training": false,
+  "new_model_inference": false,
+  "new_test_inference": false,
+  "endpoint_status": "COMPLETE_6_OF_6_SAVED_RESULTS",
+  "G_head_7500_8000_status": "PENDING_SEPARATE_HISTORICAL_FORWARD",
+  "previous_notebook_sha256": "612985ca251f564332d5642afc2a4436ffd3e9113b2c9c7b44990c6587d51059",
+  "chapter": "docs/PHAN_6_KET_QUA_SELECTOR.md",
+  "chapter_sha256": "4fda6f04a3257afd7d673ed7bc92108c23a65590b9e1332ecd052c216342beaf",
+  "endpoint_analysis_bundle": "outputs/bundles/07_SELECTOR_ENDPOINT_ABLATION_ANALYSIS_20261019.zip",
+  "endpoint_analysis_bundle_sha256": "7fc8bb5145100d7e62326492c7e0d31dd58769fdb4e8a56b6063dd321668f96b",
+  "full_endpoint_backup": {
+    "path": "D:/HUIT/Chương trình học/HK1 ( 2026- 2027)/KLTN - GAN/outputs/6. Selector Analysis/selector_endpoint_ablation_clean_backup.zip",
+    "sha256": "7dcdcbdd1a62948a704162334c992b35674cdbcffd38843e5360426b319fc062",
+    "copied_weights": false
+  },
+  "publication": "Local update only. Existing master notebook, full archives and GitHub Releases not regenerated."
+}

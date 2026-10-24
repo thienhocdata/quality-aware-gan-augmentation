@@ -1,0 +1,166 @@
+{
+  "created_date": "2026-10-17",
+  "source_identity": "Executed-source preservation and optional audit packaging",
+  "m4_worker_sha256": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+  "test_worker_sha256": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9",
+  "endgame_notebook_sha256": "c82da65ff39c6eedbdf5e755171693b37eee727f6b77940fc0d9aee75d4bc5ef",
+  "records": [
+    {
+      "path": "02_SOURCE_LOCKED/m4/m4_training_worker.py",
+      "source_archive": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\results (1).zip",
+      "source_member": "M4_IP_jobs/m4_training_worker.py",
+      "bytes": 82376,
+      "sha256": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+      "role": "Authoritative executed M4 model, graph, schedule, optimizer and checkpoint implementation; locked historical source.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/m4/test_worker_original.py",
+      "source_archive": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\M4_IP_TEST_20261016T022123Z_f9775859_REPORT.zip",
+      "source_member": "M4_IP_TEST_20261016T022123Z_f9775859/test_worker.py",
+      "bytes": 28786,
+      "sha256": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9",
+      "role": "Executed twelve-classifier original test worker; reference only, no test action in master notebook.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/protocol_b/Protocol_B_executed_V8_355611502.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\protocol_b_review\\kaggle_2026-10-06\\test_version8_355611502.ipynb",
+      "bytes": 4226479,
+      "sha256": "a4b3e9ca6f657a683cd69fe957cbeaa527ab5bba64d7f3d53a803c514ef9e596",
+      "role": "Executed Protocol B notebook snapshot including saved outputs; train/test actions are historical reference only.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/protocol_b/Protocol_B_v2_source_reference.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\reproduct - 3dhyper\\notebooks\\KLTN_3D_HyperGAMO_Protocol_B_v2.ipynb",
+      "bytes": 192115,
+      "sha256": "9424f236de4c2dbbef10d6015be068bf38dd75ce686ae9e8b851e38ab3aac467",
+      "role": "Source reference for data preparation and baseline architecture; V8 executed snapshot takes precedence for the actual historical run.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/m4/launchers_reference_only/KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\KLTN_V2_IndianPines_Moc4_Full_Comparison.ipynb",
+      "bytes": 125492,
+      "sha256": "1f74b169849012dd0c2e9c36c5d3799addd8b1d3e4184d6670434c7523e7af3c",
+      "role": "Original M4 launcher with exact WORKER_SOURCE; do not Run All as part of the consolidated saved-results workflow.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/m4/launchers_reference_only/KLTN_V2_IndianPines_Moc4_Seed42_3Arms_Remaining_Kaggle.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\KLTN_V2_IndianPines_Moc4_Seed42_3Arms_Remaining_Kaggle.ipynb",
+      "bytes": 121400,
+      "sha256": "370bba479e99277d7b4849a8a9d03a01e8521292eed0f38e5690f27091195054",
+      "role": "Original M4 launcher with exact WORKER_SOURCE; do not Run All as part of the consolidated saved-results workflow.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/m4/launchers_reference_only/KLTN_V2_IndianPines_Moc4_Group_Seed43_44_Kaggle.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\KLTN_V2_IndianPines_Moc4_Group_Seed43_44_Kaggle.ipynb",
+      "bytes": 121902,
+      "sha256": "8a0a569b0a0d3bc47d834d34f9251465a542bd87180b47ff95465fa1a45a644b",
+      "role": "Original M4 launcher with exact WORKER_SOURCE; do not Run All as part of the consolidated saved-results workflow.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/author_auxil.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/author_auxil.py",
+      "bytes": 6704,
+      "sha256": "f74bc64e5ae7d5b9fb5bab402eda6744cb39dfa1eece0c5478640ffd2783f79c",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/author_dense_suppli.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/author_dense_suppli.py",
+      "bytes": 2774,
+      "sha256": "0bbeacbbbdcee0bdfe703c13ea13b6e0147f0cb7c952417b505b67aefc969c51",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/dense_net3D_SA_original.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/dense_net3D_SA_original.py",
+      "bytes": 3709,
+      "sha256": "bfcac057ae7996d501050c08e5701bd7b973a06688a8e2df9650d7fdfd6f59d6",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/dip_data.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/dip_data.py",
+      "bytes": 4633,
+      "sha256": "1cd10b55aa50b927169bee4b425e00e7716f9e4fd196b7ce50a6449d39e620e9",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/hypergamo_worker.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/hypergamo_worker.py",
+      "bytes": 25669,
+      "sha256": "ca6c3dc2d563588ad5a3a0138d13fe50d3a5339f5b600f6bea70298c60c37685",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/code/main_original.py",
+      "source_archive": "C:\\Users\\ADMIN\\Downloads\\results\\hypergamo_16class_dip_reproduction_89d4a9a50ea0.zip",
+      "source_member": "hypergamo_16class_dip_reproduction_89d4a9a50ea0/code/main_original.py",
+      "bytes": 9410,
+      "sha256": "4770860b39524f5065501823f665b2ad9ad84cc651e44f9ba6c51b75d93f47c5",
+      "role": "Historical original-paper reproduction source; its protocol/results are separate from Protocol B and M4.",
+      "original_bytes_preserved": true,
+      "member_crc_read": "PASS",
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/history_paper_reproduction/3DHyperGAMO_IndianPines_Paper_Reproduction.ipynb",
+      "source_file": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\3DHyperGAMO_paper\\3DHyperGAMO_IndianPines_Paper_Reproduction.ipynb",
+      "bytes": 106249,
+      "sha256": "05349fb398b6aa0492a782d054cedbe023498b58e9da85c2f0c88aefa822097f",
+      "role": "Historical reproduction notebook; retained source, never automatically executed.",
+      "original_bytes_preserved": true,
+      "executed_during_packaging": false
+    },
+    {
+      "path": "02_SOURCE_LOCKED/endgame_optional.py",
+      "sha256": "e49f95bdcaa826c10e63409596cb8528d8d74beb1f304fa226e821979d39d622",
+      "bytes": 93856,
+      "role": "New isolated-process integration wrapper around preserved FIXED notebook definitions.",
+      "original_bytes_preserved": false,
+      "core_computation_changed": false,
+      "default_enabled": false,
+      "training_or_forward_executed_during_packaging": false
+    }
+  ],
+  "model_execution_performed": false,
+  "originals_modified": false,
+  "default_execution": "Saved-result review only; no TensorFlow import or model entrypoint.",
+  "source_compilation": "PASS",
+  "endgame_prior_status": "PENDING_NO_COMPLETE_6_CHECKPOINTS_REPORT"
+}

@@ -1,0 +1,59 @@
+{
+  "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\03_M4_TEST_RESULTS.zip",
+  "comparisons": [
+    {
+      "seed": 42,
+      "against": "original_gan",
+      "macro_f1_pp": 2.5812310351530976,
+      "oa_pp": 1.5886464732048355
+    },
+    {
+      "seed": 42,
+      "against": "matched_ros",
+      "macro_f1_pp": 6.061666911887609,
+      "oa_pp": 2.9866553696250797
+    },
+    {
+      "seed": 42,
+      "against": "random_local",
+      "macro_f1_pp": 2.103497517017927,
+      "oa_pp": 0.4660029654734221
+    },
+    {
+      "seed": 43,
+      "against": "original_gan",
+      "macro_f1_pp": -1.2427255830177009,
+      "oa_pp": -0.0847278119042616
+    },
+    {
+      "seed": 43,
+      "against": "matched_ros",
+      "macro_f1_pp": -0.8917053145170106,
+      "oa_pp": -0.06354585892819342
+    },
+    {
+      "seed": 43,
+      "against": "random_local",
+      "macro_f1_pp": -2.0761988511685425,
+      "oa_pp": -0.7837322601143781
+    },
+    {
+      "seed": 44,
+      "against": "original_gan",
+      "macro_f1_pp": 2.6976508078454975,
+      "oa_pp": 0.5930946833297979
+    },
+    {
+      "seed": 44,
+      "against": "matched_ros",
+      "macro_f1_pp": -0.599317730323845,
+      "oa_pp": 0.4024571065452176
+    },
+    {
+      "seed": 44,
+      "against": "random_local",
+      "macro_f1_pp": 2.321114941950886,
+      "oa_pp": 1.0167337428510836
+    }
+  ]
+}

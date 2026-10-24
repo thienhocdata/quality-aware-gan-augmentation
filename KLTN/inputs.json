@@ -1,0 +1,17 @@
+{
+  "protocol_b": "data/01_PROTOCOL_B_SOURCE.zip",
+  "m4_zips": [
+    "checkpoints/02_M4_MODELS_12.zip"
+  ],
+  "test": "outputs/bundles/03_M4_TEST_RESULTS.zip",
+  "weighting": "outputs/bundles/05_V2_WEIGHTING_8000.zip",
+  "endgame": null,
+  "endgame_input": "checkpoints/03_ENDGAME_LEARNED_LOCAL_6_CKPTS.zip",
+  "technical": "outputs/technical/MOC2_IP_SMOKE_20261015T133956Z_2abba22f_REPORT.zip",
+  "directories": [
+    "outputs/bundles",
+    "outputs/technical"
+  ],
+  "saved_bundles": "outputs/bundles",
+  "endpoint_ablation_analysis": "outputs/bundles/07_SELECTOR_ENDPOINT_ABLATION_ANALYSIS_20261019.zip"
+}

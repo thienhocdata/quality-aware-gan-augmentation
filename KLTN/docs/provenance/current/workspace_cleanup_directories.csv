@@ -1,0 +1,12 @@
+﻿path,classification,note
+.git,KEEP_WORKSPACE_METADATA,Workspace Git metadata.
+.protocol_b_review_env,REVIEW_ENV_BEFORE_DELETE,Local review environment; regenerable but may be large.
+_lit,KEEP_TEMPLATE_SUPPORT,Local document/template support.
+_review_template,KEEP_TEMPLATE_SUPPORT,Local review template support.
+docx_review_template,KEEP_TEMPLATE_SUPPORT,Local DOCX review template support.
+KLTN_archive_legacy,KEEP_LEGACY_ARCHIVE,Reversible archive created after source/hash audit.
+KLTN_clean,KEEP_CANONICAL,Project canonical.
+node_modules,KEEP_SHARED_DEPENDENCY,Workspace dependency installation; outside scientific evidence.
+outputs,KEEP_ARTIFACT_WAREHOUSE,Large checkpoint/output warehouse.
+protocol_b_review,KEEP_AUDIT_ARCHIVE,Research/audit history and received evidence.
+quality-aware-gan-augmentation,KEEP_SEPARATE_REPOSITORY,Separate GitHub/release repository.

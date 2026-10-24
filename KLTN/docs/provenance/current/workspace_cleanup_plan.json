@@ -1,0 +1,76 @@
+{
+  "scope": "Conservative workspace cleanup plan; no move/delete performed.",
+  "workspace": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN",
+  "canonical_project": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean",
+  "top_level_files": [
+    {
+      "path": "00_BAT_DAU_O_DAY.md",
+      "bytes": 1083,
+      "sha256": "7c6f69ff681c729528e43b2e3f9e1f6ed73deae3b10d14cba1a0360d2d647375",
+      "classification": "KEEP_OR_MANUAL_REVIEW",
+      "canonical_matches": ""
+    }
+  ],
+  "top_level_directories": [
+    {
+      "path": ".git",
+      "classification": "KEEP_WORKSPACE_METADATA",
+      "note": "Workspace Git metadata."
+    },
+    {
+      "path": ".protocol_b_review_env",
+      "classification": "REVIEW_ENV_BEFORE_DELETE",
+      "note": "Local review environment; regenerable but may be large."
+    },
+    {
+      "path": "_lit",
+      "classification": "KEEP_TEMPLATE_SUPPORT",
+      "note": "Local document/template support."
+    },
+    {
+      "path": "_review_template",
+      "classification": "KEEP_TEMPLATE_SUPPORT",
+      "note": "Local review template support."
+    },
+    {
+      "path": "docx_review_template",
+      "classification": "KEEP_TEMPLATE_SUPPORT",
+      "note": "Local DOCX review template support."
+    },
+    {
+      "path": "KLTN_archive_legacy",
+      "classification": "KEEP_LEGACY_ARCHIVE",
+      "note": "Reversible archive created after source/hash audit."
+    },
+    {
+      "path": "KLTN_clean",
+      "classification": "KEEP_CANONICAL",
+      "note": "Project canonical."
+    },
+    {
+      "path": "node_modules",
+      "classification": "KEEP_SHARED_DEPENDENCY",
+      "note": "Workspace dependency installation; outside scientific evidence."
+    },
+    {
+      "path": "outputs",
+      "classification": "KEEP_ARTIFACT_WAREHOUSE",
+      "note": "Large checkpoint/output warehouse."
+    },
+    {
+      "path": "protocol_b_review",
+      "classification": "KEEP_AUDIT_ARCHIVE",
+      "note": "Research/audit history and received evidence."
+    },
+    {
+      "path": "quality-aware-gan-augmentation",
+      "classification": "KEEP_SEPARATE_REPOSITORY",
+      "note": "Separate GitHub/release repository."
+    }
+  ],
+  "counts": {
+    "exact_duplicate_file_candidates": 0,
+    "manual_file_review": 1,
+    "directories": 11
+  }
+}

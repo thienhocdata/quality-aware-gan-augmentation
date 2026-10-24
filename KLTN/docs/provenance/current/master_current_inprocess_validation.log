@@ -1,0 +1,276 @@
+Chế độ: đọc kết quả đã lưu; train/test model đã khóa.
+Input: ['C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles']
+Output: C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z
+Phần 7 Endgame: TẮT — chưa chạy
+                                              source                                             sha256
+0                                endgame_optional.py  125e61d31a0837ea62d39b9bc018c787e4b3772f56684f...
+1    history_paper_reproduction/code/author_auxil.py  f74bc64e5ae7d5b9fb5bab402eda6744cb39dfa1eece0c...
+2  history_paper_reproduction/code/author_dense_s...  0bbeacbbbdcee0bdfe703c13ea13b6e0147f0cb7c95241...
+3  history_paper_reproduction/code/dense_net3D_SA...  bfcac057ae7996d501050c08e5701bd7b973a06688a8e2...
+4        history_paper_reproduction/code/dip_data.py  1cd10b55aa50b927169bee4b425e00e7716f9e4fd196b7...
+5  history_paper_reproduction/code/hypergamo_work...  ca6c3dc2d563588ad5a3a0138d13fe50d3a5339f5b600f...
+6   history_paper_reproduction/code/main_original.py  4770860b39524f5065501823f665b2ad9ad84cc651e44f...
+7                           m4/m4_training_worker.py  6d33ca6a0d39600f5f44c0d7e63547b1237149d625471a...
+8                         m4/test_worker_original.py  53673fd9ce094121431164053cc6cf990c7f4f4800aa59...
+9                             saved_results_tools.py  4b75af77d9e97328dc46f5e362217c0492b03716c67a6d...
+                         phần                            trạng thái
+0                  protocol_b              SAVED_ORIGINAL_B_RESULTS
+1                 m4_training              COMPLETE_12_JOBS_AT_8000
+2                     m4_test    COMPLETE_12_CLASSIFIERS_SAVED_TEST
+3  classification_diagnostics             SAVED_POSTHOC_DIAGNOSTICS
+4              weighting_8000              COMPLETE_3_SEEDS_AT_8000
+5              endgame_status  PENDING_SUCCESSFUL_7500_8000_FORWARD
+Các bảng: paired_differences, protocol_b_by_seed, protocol_b_original_formatted_summary, protocol_b_summary, test_by_seed, test_per_class_by_seed, test_per_class_mean_sd, test_summary_mean_sd, training_registry, weighting_per_class_saved, weighting_recomputed_by_class, weighting_recomputed_seed_summary, weighting_seed_summary
+<IPython.core.display.Markdown object>
+                      method  seeds   OA_mean  ...     GM_sd  Kappa_mean  Kappa_sd
+0                 CNN thường      3  0.858575  ...  0.013611    0.838798  0.019328
+1                  CNN + ROS      3  0.867472  ...  0.048164    0.849427  0.013736
+2         CNN + Class Weight      3  0.859917  ...  0.015286    0.840829  0.008315
+3  C-real-only clock matched      3  0.874885  ...  0.003656    0.857880  0.005676
+4               3D-HyperGAMO      3  0.883217  ...  0.040340    0.867764  0.016445
+
+[5 rows x 12 columns]
+<IPython.core.display.Markdown object>
+def tao_classifier(shape, so_lop=16):
+    L = keras.layers
+    inp = L.Input(shape=shape)
+    x = L.Conv3D(8, (1,1,7), activation="relu", padding="same")(inp)
+    x = L.Conv3D(16, (3,3,5), activation="relu", padding="same")(x)
+    x = L.Conv3D(32, (5,5,7), activation="relu", padding="same")(x)
+    s = x.shape
+    x = L.Reshape((s[1], s[2], s[3] * s[4]))(x)
+    x = L.Conv2D(64, (3,3), activation="relu", padding="same")(x)
+    x = L.GlobalAveragePooling2D()(x)
+    x = PAIRED_C_DROPOUT(0.5)(x)
+    out = L.Dense(so_lop, activation="softmax", kernel_initializer="he_normal")(x)
+    return keras.Model(inp, out, name="classifier_3d_hypergamo")
+<IPython.core.display.Markdown object>
+def tao_generator(latent_dim, so_lop):
+    L = keras.layers
+    noise = L.Input(shape=(latent_dim,))
+    labels = L.Input(shape=(so_lop,))
+    x = L.Concatenate()([noise, labels])
+    x = L.Dense(7*7*256, use_bias=False)(x)
+    x = L.BatchNormalization(momentum=0.9)(x)
+    x = L.LeakyReLU()(x)
+    x = L.Reshape((7,7,256))(x)
+    x = L.Conv2DTranspose(128, (5,5), strides=(1,1), padding="same", use_bias=False)(x)
+    x = L.BatchNormalization(momentum=0.9)(x)
+    x = L.LeakyReLU()(x)
+    x = L.Conv2DTranspose(64, (5,5), strides=(2,2), padding="same", use_bias=False)(x)
+    x = L.BatchNormalization(momentum=0.9)(x)
+    x = L.LeakyReLU()(x)
+    x = L.Conv2DTranspose(1, (5,5), strides=(2,2), padding="same", use_bias=False)(x)
+    x = L.BatchNormalization(momentum=0.9)(x)
+    out = L.Flatten()(x)  # 28×28 = 784
+    return keras.Model([noise, labels], out, name="G")
+<IPython.core.display.Markdown object>
+def tao_head_v2(support, neighbors, rho=RHO):
+    """B Dense(Nc) head, but local kNN masked softmax and a sampled anchor.
+
+    Input 1: G output (batch,784). Input 2: head-local anchor row id (batch,1).
+    The full Dense(Nc) remains trainable; no learned anchor choice and no
+    learned rho. Supports/graph are fixed, non-trainable tensors.
+    """
+    assert support.ndim == 5 and support.shape[1:] == SHAPE
+    n = len(support)
+    assert neighbors.shape == (n,K)
+    assert np.all((neighbors>=0) & (neighbors<n))
+    assert not np.any(neighbors == np.arange(n)[:,None])
+    L=keras.layers
+    support_const=tf.constant(np.asarray(support.reshape(n,FLAT),np.float32))
+    graph_const=tf.constant(neighbors,dtype=tf.int32)
+    features=L.Input(shape=(784,),name='generator_features')
+    anchor_ids=L.Input(shape=(1,),dtype='int32',name='head_local_anchor_id')
+    # Crucial: Dense(Nc) has the SAME output size as the original B head.
+    logits=L.Dense(n,activation=None,name='support_logits')(features)
+    def local_mix(inputs):
+        all_logits, ids=inputs
+        ids=tf.reshape(tf.cast(ids,tf.int32),[-1])
+        allowed=tf.gather(graph_const,ids)                    # (batch,3)
+        allowed_logits=tf.gather(all_logits,allowed,axis=1,batch_dims=1)
+        w=tf.nn.softmax(allowed_logits,axis=1)
+        x0=tf.gather(support_const,ids)                       # (batch,4840)
+        xs=tf.gather(support_const,allowed)                   # (batch,3,4840)
+        return (1.0-rho)*x0 + rho*tf.einsum('bk,bkp->bp',w,xs)
+    mixed=L.Lambda(local_mix,output_shape=(FLAT,),name='local_convex_mix')([logits,anchor_ids])
+    output=L.Reshape(SHAPE,name='synthetic_patch')(mixed)
+    return keras.Model([features,anchor_ids],output,name=f'head_v2_{n}')
+<IPython.core.display.Markdown object>
+def build_graph_per_class(X, y):
+    """Exact full-patch train-only kNN. Local supports sorted by global row order."""
+    from scipy.spatial.distance import cdist
+    counts = np.bincount(y, minlength=16)
+    order = np.lexsort((np.arange(16),counts))
+    if not np.all(counts[order[-1]] > counts[order[:-1]]) or np.any(counts[order[:-1]] < K+1):
+        raise ValueError('Requires a strict single majority and >=4 train samples for each of 15 heads')
+    inverse = np.empty(16, np.int64)
+    inverse[order] = np.arange(16)
+    y_sorted = inverse[y]
+    supports, graph = [], []
+    for h in range(15):
+        support = np.asarray(X[y_sorted == h],np.float32)
+        flat = support.reshape(len(support), FLAT).astype(np.float64)
+        dist = cdist(flat, flat, metric='euclidean')
+        np.fill_diagonal(dist,np.inf)
+        # Tie-break by original train-row order (which is support-row order).
+        nearest = np.empty((len(support),K),np.int32)
+        for a in range(len(support)):
+            nearest[a] = np.lexsort((np.arange(len(support)),dist[a]))[:K]
+        assert not np.any(nearest == np.arange(len(support))[:,None])
+        supports.append(support)
+        graph.append(nearest)
+    return {'supports':supports,'neighbor_graphs':graph,
+            'counts':counts,'order':order,'inverse':inverse,'y_sorted':y_sorted}
+<IPython.core.display.Markdown object>
+              arm  ...                     source_member_prefix
+0   learned_local  ...  M4_IP_jobs/final/learned_local/seed_42/
+1     matched_ros  ...    M4_IP_jobs/final/matched_ros/seed_42/
+2    random_local  ...   M4_IP_jobs/final/random_local/seed_42/
+3    original_gan  ...                                     job/
+4   learned_local  ...  M4_IP_jobs/final/learned_local/seed_43/
+5   learned_local  ...  M4_IP_jobs/final/learned_local/seed_44/
+6     matched_ros  ...    M4_IP_jobs/final/matched_ros/seed_43/
+7     matched_ros  ...    M4_IP_jobs/final/matched_ros/seed_44/
+8    original_gan  ...   M4_IP_jobs/final/original_gan/seed_43/
+9    original_gan  ...   M4_IP_jobs/final/original_gan/seed_44/
+10   random_local  ...   M4_IP_jobs/final/random_local/seed_43/
+11   random_local  ...   M4_IP_jobs/final/random_local/seed_44/
+
+[12 rows x 11 columns]
+<IPython.core.display.Markdown object>
+              arm  seed  test_samples  ...  Macro_F1        GM     Kappa
+0    original_gan    42          4721  ...  0.839038  0.786279  0.864635
+1    original_gan    43          4721  ...  0.826676  0.865069  0.856946
+2    original_gan    44          4721  ...  0.784181  0.811229  0.854557
+3     matched_ros    42          4721  ...  0.804233  0.775542  0.849002
+4     matched_ros    43          4721  ...  0.823166  0.840464  0.856794
+5     matched_ros    44          4721  ...  0.817151  0.801245  0.856786
+6    random_local    42          4721  ...  0.843815  0.826174  0.877300
+7    random_local    43          4721  ...  0.835011  0.853482  0.865404
+8    random_local    44          4721  ...  0.787947  0.776209  0.850495
+9   learned_local    42          4721  ...  0.864850  0.852832  0.882468
+10  learned_local    43          4721  ...  0.814249  0.824934  0.856138
+11  learned_local    44          4721  ...  0.811158  0.776017  0.861691
+
+[12 rows x 8 columns]
+<IPython.core.display.Markdown object>
+             arm  seeds   OA_mean  ...     GM_sd  Kappa_mean  Kappa_sd
+0   original_gan      3  0.875521  ...  0.040268    0.858712  0.005266
+1    matched_ros      3  0.871426  ...  0.032695    0.854194  0.004496
+2   random_local      3  0.880181  ...  0.039186    0.864400  0.013431
+3  learned_local      3  0.882511  ...  0.038884    0.866766  0.013879
+
+[4 rows x 12 columns]
+<IPython.core.display.Markdown object>
+                       contrast  seed        OA  ...  Macro_F1        GM     Kappa
+0  learned_local - original_gan    42  0.015886  ...  0.025812  0.066553  0.017833
+1  learned_local - original_gan    43 -0.000847  ... -0.012427 -0.040135 -0.000808
+2  learned_local - original_gan    44  0.005931  ...  0.026977 -0.035212  0.007134
+3   learned_local - matched_ros    42  0.029867  ...  0.060617  0.077290  0.033465
+4   learned_local - matched_ros    43 -0.000635  ... -0.008917 -0.015529 -0.000656
+5   learned_local - matched_ros    44  0.004025  ... -0.005993 -0.025228  0.004904
+6  learned_local - random_local    42  0.004660  ...  0.021035  0.026658  0.005167
+7  learned_local - random_local    43 -0.007837  ... -0.020762 -0.028548 -0.009266
+8  learned_local - random_local    44  0.010167  ...  0.023211 -0.000192  0.011196
+
+[9 rows x 7 columns]
+<IPython.core.display.Markdown object>
+              arm  class_id  ...   F1_mean     F1_sd
+0    original_gan         1  ...  0.787493  0.135858
+1    original_gan         2  ...  0.831601  0.021086
+2    original_gan         3  ...  0.835512  0.033457
+3    original_gan         4  ...  0.691875  0.071179
+4    original_gan         5  ...  0.890737  0.024105
+..            ...       ...  ...       ...       ...
+59  learned_local        12  ...  0.794278  0.008297
+60  learned_local        13  ...  0.823186  0.015996
+61  learned_local        14  ...  0.987606  0.002066
+62  learned_local        15  ...  0.345526  0.155408
+63  learned_local        16  ...  0.735858  0.018485
+
+[64 rows x 11 columns]
+Hình đã xuất: 5
+<IPython.core.display.Markdown object>
+<IPython.core.display.Image object>
+<IPython.core.display.Markdown object>
+<IPython.core.display.Image object>
+<IPython.core.display.Markdown object>
+<IPython.core.display.Image object>
+<IPython.core.display.Markdown object>
+<IPython.core.display.Image object>
+<IPython.core.display.Markdown object>
+   model_seed  ...  uniform_displacement_rms_per_coordinate__mean
+0          42  ...                                       0.030775
+1          43  ...                                       0.030705
+2          44  ...                                       0.030777
+
+[3 rows x 8 columns]
+Phần 7 chưa chạy. Checkpoint 7.500 có sẵn; không train lại.
+{'status': 'PENDING_NOT_RUN', 'reason': 'Đủ checkpoint; forward 7.500→8.000 chưa được chạy trong phiên này.'}
+<IPython.core.display.Markdown object>
+   G_seed  C_seed            method  ...     Kappa       NLL     Brier
+0      42      42   learned_weights  ...  0.844237  1.241177  0.244680
+1      42      42  random_one_fixed  ...  0.869102  0.847069  0.199262
+2      43      43   learned_weights  ...  0.864765  0.979678  0.210671
+3      43      43  random_one_fixed  ...  0.832020  1.089026  0.256870
+4      44      44   learned_weights  ...  0.855547  0.881829  0.219763
+5      44      44  random_one_fixed  ...  0.846163  1.043296  0.228445
+
+[6 rows x 10 columns]
+<IPython.core.display.Markdown object>
+     metric  learned_mean  ...  paired_sample_SD     units
+0        OA      0.871920  ...          0.025635  fraction
+1        AA      0.852626  ...          0.030203  fraction
+2  Macro_F1      0.821627  ...          0.029086  fraction
+3        GM      0.799067  ...          0.059046  fraction
+4     Kappa      0.854850  ...          0.028976       raw
+5       NLL      1.034228  ...          0.306824       raw
+6     Brier      0.225038  ...          0.046058       raw
+
+[7 rows x 8 columns]
+   G_seed  C_seed  ...  learned_only_correct  random_only_correct
+0      42      42  ...                    54                  158
+1      43      43  ...                   195                   58
+2      44      44  ...                   212                  176
+
+[3 rows x 11 columns]
+<IPython.core.display.Markdown object>
+          method   OA_mean  ...  Brier_mean  Brier_sample_SD
+0           V3-A  0.876086  ...    0.214920         0.020703
+1  learned_local  0.882511  ...    0.206200         0.021454
+2   random_local  0.880181  ...    0.209200         0.022744
+3   original_gan  0.875521  ...    0.214358         0.007061
+4    matched_ros  0.871426  ...    0.225052         0.008736
+
+[5 rows x 15 columns]
+<IPython.core.display.Markdown object>
+   seed  OA_V3_minus_V2  ...  NLL_V3_minus_V2  Brier_V3_minus_V2
+0    42       -0.006778  ...         0.009253           0.009219
+1    43       -0.004236  ...         0.091634           0.003442
+2    44       -0.008261  ...         0.181302           0.013498
+
+[3 rows x 8 columns]
+<IPython.core.display.Markdown object>
+   seed  c_updates  ...  G_feature_noise_RMS_mean  patch_noise_RMS_mean
+0    42        200  ...                  0.343744          9.868580e-04
+1    42       8000  ...                  0.547719          3.020880e-10
+2    43        200  ...                  0.483527          1.566721e-03
+3    43       8000  ...                  0.649082          1.804305e-08
+4    44        200  ...                  0.517616          1.623818e-03
+5    44       8000  ...                  0.721023          3.201845e-09
+
+[6 rows x 13 columns]
+   source_records  artifact_records  source_pass  artifact_pass      protocol
+0              22                12         True           True  50e988fae260
+C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\CURRENT_PROJECT_MANIFEST.json
+HOÀN TẤT đường đọc kết quả đã lưu.
+Output: C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z
+<IPython.core.display.Markdown object>
+C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z\saved_results\REPORT.md
+<IPython.core.display.Markdown object>
+C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z\saved_results\review_manifest.json
+<IPython.core.display.Markdown object>
+C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z\saved_results.zip
+C:\Users\ADMIN\OneDrive\Tài liệu\ChatGPT\KLTN\KLTN_clean\outputs\master_reviews\KLTN_MASTER_REVIEW_20261023T005110Z\master_session_manifest.json
+CPU_ONLY_NO_MODEL_IMPORT_PASS

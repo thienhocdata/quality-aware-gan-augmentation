@@ -1,0 +1,14 @@
+{
+  "protocol_B_id": "50e988fae260",
+  "base": "/kaggle/working/selector/endpoint_ablation_clean_r3",
+  "worker_path": "/kaggle/input/datasets/thienmaivan/results/M4_IP_jobs/m4_training_worker.py",
+  "b_run": "/kaggle/input/datasets/thienmaivan/hypergamo-b-cache-355611502-b/KLTN_HyperGAMO_B_50e988fae260",
+  "checkpoints": {
+    "42": "/kaggle/input/datasets/thienmaivan/seed42-ll",
+    "43": "/kaggle/input/datasets/thienmaivan/results/M4_IP_final_learned_local_seed43_REPORT/job/state/ckpt_08000",
+    "44": "/kaggle/input/datasets/thienmaivan/results/M4_IP_final_learned_local_seed44_REPORT/job/state/ckpt_08000"
+  },
+  "max_worker_seconds": 5400,
+  "checkpoint_safety_seconds": 180,
+  "indian_pines_mat": null
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "generated_date": "2026-10-24",
+  "project": "KLTN_clean",
+  "protocol_B_id": "50e988fae260",
+  "scope": "Source and artifact identity audit only; no TensorFlow/model execution.",
+  "source_records": 22,
+  "artifact_records": 13,
+  "source_identity_checks_pass": true,
+  "artifact_presence_checks_pass": true,
+  "cross_checks": {
+    "m4_worker_equals_v3a_pinned_copy": true,
+    "legacy_endpoint_is_distinct_from_final_ablation_runner": true
+  },
+  "known_nonblocking_gaps": [
+    "The 7,500-to-8,000 endgame forward analysis has no COMPLETE report.",
+    "The standalone M3/final-technical report name remains unresolved, although its source is preserved.",
+    "GPU package versions are recorded per historical run but are not a single bitwise environment lock.",
+    "Protocol B is preserved as an executed notebook, not yet refactored into canonical reusable modules."
+  ],
+  "safe_reorganization": "Historical bytes remain unchanged; missing executed sources were copied into src/frozen and 29 top-level legacy items were moved reversibly into indexed archives."
+}

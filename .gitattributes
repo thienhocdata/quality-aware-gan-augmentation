@@ -1,0 +1,5 @@
+# Preserve audited source, notebook outputs and provenance byte for byte.
+KLTN/** -text
+*.zip binary
+*.pdf binary
+*.png binary

@@ -1,0 +1,73 @@
+{
+  "source_zip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\KLTN_clean.zip",
+  "source_zip_sha256": "ca21caffe0740bd1a47fd2a81ae7539c856d52e1455cddf882f23481e642c06f",
+  "copies": [
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\01_PROTOCOL_B_RESULTS.zip",
+      "target": "outputs\\bundles\\01_PROTOCOL_B_RESULTS.zip",
+      "bytes": 3887245,
+      "sha256": "92695c16366496cdd5fc0dc96876d4076508817e74c7e34cf2dfc01783660628"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\02_M4_TRAINING_RESULTS.zip",
+      "target": "outputs\\bundles\\02_M4_TRAINING_RESULTS.zip",
+      "bytes": 395221,
+      "sha256": "c9ec7de211a64afc4b4f8af0d861178adeee5f514e075bd071c2e38395112757"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\03_M4_TEST_RESULTS.zip",
+      "target": "outputs\\bundles\\03_M4_TEST_RESULTS.zip",
+      "bytes": 3034663,
+      "sha256": "542cf047ff0e09b7f238a12eab483afac5badb3c3313d5b1d4e9b40c045941c7"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\04_V2_CLASSIFICATION_DIAGNOSTICS.zip",
+      "target": "outputs\\bundles\\04_V2_CLASSIFICATION_DIAGNOSTICS.zip",
+      "bytes": 256880,
+      "sha256": "28a7051a6cb786fd48ed3e842d9c1921cf2a3bed0fb70dd974734a495113371e"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\05_V2_WEIGHTING_8000.zip",
+      "target": "outputs\\bundles\\05_V2_WEIGHTING_8000.zip",
+      "bytes": 16239039,
+      "sha256": "4b390c7294bdbad32139a9ffbf27c824443556334d55494efe0e91b9d17eecad"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\04_OUTPUTS\\06_ENDGAME_7500_8000_STATUS.zip",
+      "target": "outputs\\bundles\\06_ENDGAME_7500_8000_STATUS.zip",
+      "bytes": 4806,
+      "sha256": "2fb38d19b47552007dcedc31dc9d183c255060def9f3b1ebee5df4f44c3c6fdc"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\03_INPUTS\\01_PROTOCOL_B_SOURCE.zip",
+      "target": "data\\01_PROTOCOL_B_SOURCE.zip",
+      "bytes": 1408748991,
+      "sha256": "8e586d26e65ecc4ff9567cc864509af7786cb1e32031cca4aae44cad331fd4fe"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\03_INPUTS\\02_M4_MODELS_12.zip",
+      "target": "checkpoints\\02_M4_MODELS_12.zip",
+      "bytes": 1143820236,
+      "sha256": "1c51b83de5bb80e777c9a730ab645e244e9b2a79edfbbc6b7588bd42c8dc15bf"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_TRUC_CHINH\\03_INPUTS\\03_ENDGAME_LEARNED_LOCAL_6_CKPTS.zip",
+      "target": "checkpoints\\03_ENDGAME_LEARNED_LOCAL_6_CKPTS.zip",
+      "bytes": 553574151,
+      "sha256": "f14ecf08f2fe6e9efa73608d23e298660fde1a33c8285fd6e8d24e3ddd931903"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\V2_IP_SMOKE_20261015T120421Z_b948803d_REPORT.zip",
+      "target": "outputs\\technical\\V2_IP_SMOKE_20261015T120421Z_b948803d_REPORT.zip",
+      "bytes": 39768,
+      "sha256": "1d333fc0fa2196bbd98835d8d53c75de65706f9617cd086d860cc509068ccf9a"
+    },
+    {
+      "source": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\MOC2_IP_SMOKE_20261015T133956Z_2abba22f_REPORT.zip",
+      "target": "outputs\\technical\\MOC2_IP_SMOKE_20261015T133956Z_2abba22f_REPORT.zip",
+      "bytes": 287043,
+      "sha256": "7f57bf41a0f3a3cc524d7a8a55efc79b3e86aa19bd7c71adda6fe138ff9f984d"
+    }
+  ],
+  "originals_unchanged": true
+}

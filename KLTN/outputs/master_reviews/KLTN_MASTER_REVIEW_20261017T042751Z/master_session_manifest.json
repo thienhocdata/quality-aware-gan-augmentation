@@ -1,0 +1,35 @@
+{
+  "protocol_B_id": "50e988fae260",
+  "completed_gpu_phases_locked": true,
+  "new_training_performed": false,
+  "new_test_model_inference_performed": false,
+  "saved_result_sections": {
+    "protocol_b": "SAVED_ORIGINAL_B_RESULTS",
+    "m4_training": "COMPLETE_12_JOBS_AT_8000",
+    "m4_test": "COMPLETE_12_CLASSIFIERS_SAVED_TEST",
+    "classification_diagnostics": "SAVED_POSTHOC_DIAGNOSTICS",
+    "weighting_8000": "COMPLETE_3_SEEDS_AT_8000",
+    "endgame_status": "PENDING_SUCCESSFUL_7500_8000_FORWARD"
+  },
+  "endgame_session": {
+    "status": "PENDING_NOT_RUN",
+    "reason": "Đủ checkpoint; forward 7.500→8.000 chưa được chạy trong phiên này."
+  },
+  "source_sha256": {
+    "endgame_optional.py": "125e61d31a0837ea62d39b9bc018c787e4b3772f56684f127868aa4ed9c2d339",
+    "history_paper_reproduction/code/author_auxil.py": "f74bc64e5ae7d5b9fb5bab402eda6744cb39dfa1eece0c5478640ffd2783f79c",
+    "history_paper_reproduction/code/author_dense_suppli.py": "0bbeacbbbdcee0bdfe703c13ea13b6e0147f0cb7c952417b505b67aefc969c51",
+    "history_paper_reproduction/code/dense_net3D_SA_original.py": "bfcac057ae7996d501050c08e5701bd7b973a06688a8e2df9650d7fdfd6f59d6",
+    "history_paper_reproduction/code/dip_data.py": "1cd10b55aa50b927169bee4b425e00e7716f9e4fd196b7ce50a6449d39e620e9",
+    "history_paper_reproduction/code/hypergamo_worker.py": "ca6c3dc2d563588ad5a3a0138d13fe50d3a5339f5b600f6bea70298c60c37685",
+    "history_paper_reproduction/code/main_original.py": "4770860b39524f5065501823f665b2ad9ad84cc651e44f9ba6c51b75d93f47c5",
+    "m4/m4_training_worker.py": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+    "m4/test_worker_original.py": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9",
+    "saved_results_tools.py": "4b75af77d9e97328dc46f5e362217c0492b03716c67a6d41fce4a904875fa6b7"
+  },
+  "report_paths": {
+    "report_md": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\REPORT.md",
+    "manifest": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results\\review_manifest.json",
+    "report_zip": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261017T042751Z\\saved_results.zip"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "created_utc": "2026-10-17T04:28:05.114319+00:00",
+  "frozen_source_checks": [
+    {
+      "file": "src/frozen/endgame.py",
+      "status": "PASS",
+      "sha256": "5e171cb7712c2569c99bfe957b375756e95c26d26243ed9cf8dccbd4f3a1a9a4",
+      "expected": "5e171cb7712c2569c99bfe957b375756e95c26d26243ed9cf8dccbd4f3a1a9a4"
+    },
+    {
+      "file": "src/frozen/endpoint.py",
+      "status": "PASS",
+      "sha256": "7c92c021459b825271aedee161194cde374b0867bb442421f645fd62e9d8048e",
+      "expected": "7c92c021459b825271aedee161194cde374b0867bb442421f645fd62e9d8048e"
+    },
+    {
+      "file": "src/frozen/group_launcher.py",
+      "status": "PASS",
+      "sha256": "b3ba6bdd83a53609b426cc1cb7690daec774f2ca36307bc317f0b6ede05cb99d",
+      "expected": "b3ba6bdd83a53609b426cc1cb7690daec774f2ca36307bc317f0b6ede05cb99d"
+    },
+    {
+      "file": "src/frozen/m4.py",
+      "status": "PASS",
+      "sha256": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5",
+      "expected": "6d33ca6a0d39600f5f44c0d7e63547b1237149d625471ac73315d982ffbd8fb5"
+    },
+    {
+      "file": "src/frozen/runner.py",
+      "status": "PASS",
+      "sha256": "3ac45bc3d22905904cd66a1f66ec03839192fb48a1af01f55528506dd4cd7992",
+      "expected": "3ac45bc3d22905904cd66a1f66ec03839192fb48a1af01f55528506dd4cd7992"
+    },
+    {
+      "file": "src/frozen/runner_launcher.py",
+      "status": "PASS",
+      "sha256": "7a0813d1dbb0d6cdf5852a0fe9b70730f719d97d832795bb29dfe5ed58952948",
+      "expected": "7a0813d1dbb0d6cdf5852a0fe9b70730f719d97d832795bb29dfe5ed58952948"
+    },
+    {
+      "file": "src/frozen/smoke.py",
+      "status": "PASS",
+      "sha256": "dfdb2c59d4905c1504dc090eacd93965fc077d0543c3cd319d2923472d5713b7",
+      "expected": "dfdb2c59d4905c1504dc090eacd93965fc077d0543c3cd319d2923472d5713b7"
+    },
+    {
+      "file": "src/frozen/smoke_launcher.py",
+      "status": "PASS",
+      "sha256": "0ae236a0c9760ebf6cb1ff6f95239a54dd48e5521355f7e6731929e1cbecc24c",
+      "expected": "0ae236a0c9760ebf6cb1ff6f95239a54dd48e5521355f7e6731929e1cbecc24c"
+    },
+    {
+      "file": "src/frozen/technical.py",
+      "status": "PASS",
+      "sha256": "1024fd19899d0ebecc8eae76b721333e3c63f2d8e5b0c04d4bf151ceb5ccb116",
+      "expected": "1024fd19899d0ebecc8eae76b721333e3c63f2d8e5b0c04d4bf151ceb5ccb116"
+    },
+    {
+      "file": "src/frozen/technical_launcher.py",
+      "status": "PASS",
+      "sha256": "030f8d9be7b38a610005fa60283ab66438eab1c9461157448294c6803de1b351",
+      "expected": "030f8d9be7b38a610005fa60283ab66438eab1c9461157448294c6803de1b351"
+    },
+    {
+      "file": "src/frozen/test.py",
+      "status": "PASS",
+      "sha256": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9",
+      "expected": "53673fd9ce094121431164053cc6cf990c7f4f4800aa599fc8ed88b86f88e4b9"
+    },
+    {
+      "file": "src/frozen/test_gate.py",
+      "status": "PASS",
+      "sha256": "dd869905f57502defba45223aa0e9b5282fa3176527ef8b3ab099f5349f15d1c",
+      "expected": "dd869905f57502defba45223aa0e9b5282fa3176527ef8b3ab099f5349f15d1c"
+    },
+    {
+      "file": "src/frozen/test_launcher.py",
+      "status": "PASS",
+      "sha256": "669978fcb5243a00977b8360549940633f0fbb6ffb6768cb154b41339f10f219",
+      "expected": "669978fcb5243a00977b8360549940633f0fbb6ffb6768cb154b41339f10f219"
+    },
+    {
+      "file": "src/frozen/train_launcher.py",
+      "status": "PASS",
+      "sha256": "80e82e711c85a24e83ea51675023c5c9a15a042bb2b141899d22a2faca5ec3da",
+      "expected": "80e82e711c85a24e83ea51675023c5c9a15a042bb2b141899d22a2faca5ec3da"
+    },
+    {
+      "file": "src/frozen/weighting.py",
+      "status": "PASS",
+      "sha256": "131304f6155b56b04be601d888755445dafd332839d0d6d14c68a102fead872f",
+      "expected": "131304f6155b56b04be601d888755445dafd332839d0d6d14c68a102fead872f"
+    }
+  ],
+  "notebooks": [
+    {
+      "notebook": "00_MASTER.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 24,
+      "code_cells": 12,
+      "sha256": "1d5bc65d69ea1632cbc90525f5344cd20eae32b6ea7ba72eb380ab577fbf595d"
+    },
+    {
+      "notebook": "hypergamo.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 12,
+      "code_cells": 6,
+      "sha256": "87f95841a9ae8b8479e4225c86ede30206634fd486916d69be82d1e5092b605d"
+    },
+    {
+      "notebook": "protocol_b.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 12,
+      "code_cells": 6,
+      "sha256": "c686df562d355a335d72fbd5437e9f6cdc007c050c4f22142629a27e420ecf00"
+    },
+    {
+      "notebook": "v2.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 12,
+      "code_cells": 6,
+      "sha256": "e5c5253f9b6478ef9f486e93a56ee525f5e6c673ef475d23266a0d3430a43a43"
+    },
+    {
+      "notebook": "m4.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 12,
+      "code_cells": 6,
+      "sha256": "e0a378931f5ee53da33b07429f70a21882fa9162f822f25dfd7830fedea1afb7"
+    },
+    {
+      "notebook": "test.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 14,
+      "code_cells": 7,
+      "sha256": "4de31cd60b0321aa5c895debe55d5df6c3038508e959ca4d6b74e7f8cff08dd0"
+    },
+    {
+      "notebook": "selector.ipynb",
+      "status": "CPU_ALL_CELLS_PASS",
+      "cells": 14,
+      "code_cells": 7,
+      "sha256": "612985ca251f564332d5642afc2a4436ffd3e9113b2c9c7b44990c6587d51059"
+    }
+  ],
+  "new_training": false,
+  "new_model_inference": false,
+  "new_test_inference": false,
+  "endgame_status": "PENDING_NOT_RUN",
+  "checkpoint_bytes_modified": false
+}

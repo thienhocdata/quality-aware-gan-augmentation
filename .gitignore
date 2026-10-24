@@ -48,4 +48,9 @@ wandb/
 .DS_Store
 Thumbs.db
 
+# KLTN full data/checkpoints are distributed in the dated GitHub Release.
+/KLTN/data/01_PROTOCOL_B_SOURCE.zip
+/KLTN/checkpoints/02_M4_MODELS_12.zip
+/KLTN/checkpoints/03_ENDGAME_LEARNED_LOCAL_6_CKPTS.zip
+
 

@@ -1,0 +1,76 @@
+HỤ LỤC QUYẾT ĐỊNH THIẾT KẾ v1.0 — Shared Real-Conditioned Residual Patch GAN
+Ngày: 24/10/2026. Trạng thái: GO cho đặc tả/prototype có giới hạn; NO-GO huấn luyện dài cho đến khi development contract và profiler được xác nhận. Đây là phụ lục sửa các điểm thiếu của DE_XUAT_KIEN_TRUC_GAN_HSI_2026-10-24.md bản 0.9; các quyết định dưới đây được ưu tiên khi khác bản 0.9. Chưa có huấn luyện GAN mới hoặc kết quả HSI cho A0/A1.
+1. Câu hỏi khoa học và điều không được kết luận
+- H1 — Giá trị của GAN: Với cùng C, dữ liệu, lịch exposure và evaluation contract, patch từ một GAN nhận anchor thật có cải thiện phân loại lớp thiểu số so với matched ROS và SIMPLE random residual không?
+- H2 — Lợi ích của parameterization: Khi giữ chung encoder/trunk, D, loss, optimizer, lịch huấn luyện và envelope, A1 factorized residual rank 4 khác A0 free residual ra sao về downstream F1, copy/noise, center/context distortion và chi phí?
+- A0 output head có 1.243.880 tham số; A1 có 165.508 (chênh khoảng 7,52 lần). H2 ở vòng này đo hiệu quả của gói biểu diễn + capacity, không cô lập tác dụng low-rank khỏi số tham số. Không tuyên bố "rank4 tốt hơn vì rank4" nếu chưa có đối chứng capacity-matched ở giai đoạn xác nhận.
+- A1 thắng A0 nhưng không thắng ROS/SIMPLE: chưa đủ lý do đề xuất GAN như augmentation hữu ích. A1 thắng ROS nhưng hòa A0: có tín hiệu GAN hữu ích, chưa chứng minh riêng factorization.
+2. Kiến trúc cố định của vòng thăm dò
+Đầu vào HSI PCA train-only: [B,11,11,40]; label c∈{0,…,15}; noise z∈R^64.
+- E_a và G trunk: shared spectral–spatial encoder + center-spectrum branch, anchor embedding 128D; concat embedding, class embedding và z; shared conditional trunk kết thúc 256D. Cùng trunk/khởi tạo chung (khi khả thi) giữa A0 và A1.
+- A0: Dense(256→4840), reshape [B,121,40].
+- A1: Dense(256→484) cho U[B,121,4] và Dense(256→160) cho V[B,4,40], T=UV/√4; reshape [B,11,11,40]. Rank tối đa 4 là giả thuyết, không có bảo đảm hữu ích.
+- Envelope chung: Delta = R_a*T / sqrt(R_a²+||T||_F²+eps_norm²), fake = anchor + Delta. R_a = eta*s_a, s_a là median khoảng cách Frobenius anchor tới tối đa ba support khác cùng lớp (train-only). eta=0.25 là điểm khởi đầu để thẩm định trên thống kê train-only, chưa là giá trị tối ưu. Kiểm ||Delta||_F ≤ R_a số học; envelope không bảo đảm đúng lớp.
+- D: conditional projection CNN + hinge, không sigmoid. Chọn cho vòng đầu: giữ D GAP như v0.9, chưa thêm center branch vì A0/A1 cần cùng một scaffold đơn giản; thay vào đó bắt buộc đo center/context và có cổng dừng nếu D/G thay đổi context mà không có utility cho nhãn tâm. Chỉ thêm center branch thành can thiệp riêng sau pilot nếu dữ liệu cho thấy lý do.
+- C: downstream CNN spectral–spatial + center-spectrum branch như v0.9, freeze G khi train C; không truyền C-gradient vào G trong scaffold đầu. Đây là thiết kế mới kế thừa bài toán HyperGAMO, không phải tái lập đúng trò chơi GC/GD gốc.
+- Optimizer/loss: conditional hinge: L_D=E relu(1-D(real,c))+E relu(1+D(fake,c)); L_G_adv=-E D(fake,c). G loss cộng các penalty nonidentity/noise của v0.9 với hệ số lambda giống nhau ở A0/A1. Hai optimizer G/D độc lập, lịch bước 1D:1G là lựa chọn scaffold, không bê 34 slots M4.
+3. Chốt initializer, zero-scale, epsilon và gradient
+1. Không khởi tạo U và V đồng thời bằng 0 hoặc quá nhỏ. Khởi tạo hai factor ngẫu nhiên khác 0, sau đó hiệu chỉnh độ lớn residual đầu ra trên một batch anchor/noise train-only cố định sao cho phân bố ||Delta||/s_a ban đầu của A0 và A1 nằm trong cùng một dải nhỏ đã đăng ký trong config. Ghi lại median, P10, P90 của cả hai; không dùng dev/test F1 cho việc hiệu chỉnh. Kiểm gradient riêng U, V, G trunk, E_a.
+2. Định nghĩa eps_norm theo cùng thang dữ liệu đã tiền xử lý; ghi giá trị, đơn vị và kiểm toán tính hữu hạn tại T=0 và R_a=0. Dùng epsilon riêng eps_scale cho tỷ số regularizer. Không tăng ngầm R_a để tránh trường hợp s_a≈0.
+3. Nếu s_a dưới ngưỡng gần 0 đã đăng ký từ train statistics, không dùng anchor đó để train G hoặc xuất fake; fake-slot tương ứng dùng ROS như nhau ở các arm và ghi rõ tỷ lệ fallback theo lớp. Nếu fallback chiếm tỷ lệ lớn, STOP để xét lại định nghĩa locality.
+4. Loss L_nov, L_noise dựa trên norm có thể có gradient bằng 0 tại exact identity dù dùng sqrt(||x||²+eps²): initializer nonzero và kiểm thử gradient riêng là bắt buộc. Không tuyên bố penalty bảo đảm thoát identity collapse.
+5. Calibration lambda: kiểm gradient ở effective residual/output Delta (∂L_adv/∂Delta, ∂L_nov/∂Delta, ∂L_noise/∂Delta) trên batch train-only cố định; không so norm toàn bộ tham số A0/A1 do bất biến scale U→kU, V→V/k. Chọn lambda trên train-only smoke, khóa chung trước khi đọc development F1. Báo tỷ số gradient và residual energy sau initialization và trong pilot.
+4. Thẩm định rank-4 không cần huấn luyện GAN
+Trên support train theo từng class, chọn cặp patch cùng lớp a,n (bao gồm cặp neighbor gần và cặp cách xa nếu có), đặt ma trận sai khác M=(n-a).reshape(121,40) và tính singular values. Báo:
+
+energy_at_rank4 = (Σ_{i=1}^4 σ_i²)/(Σ_i σ_i²);
+
+rel_error_rank4 = sqrt(1-energy_at_rank4).
+
+Thống kê median, P10/P90 theo lớp, số cặp hợp lệ và tỷ lệ cặp spatially overlapping. Không dùng ảnh gốc để suy rank của biến thiên; không dùng test donor. Nếu low-rank energy thấp trên các lớp cần phục vụ, đánh dấu A1 có rủi ro underfit; không tự thay rank sau khi xem test.
+5. Định nghĩa chính xác các arm downstream
+Arm	Tạo dữ liệu tại một synthetic class-slot	Vai trò
+ROS	Lặp lại support thật cùng class theo cùng anchor/class manifest	Đối chứng chính về exposure
+SIMPLE	fake=a+envelope(T_random), với T_random = U_random V_random/√4, các factor random rank4 độc lập/được seed cố định và có scale train-only đã đăng ký; cùng R_a và policy fallback	Null control sát A1, kiểm GAN có học hơn perturbation ngẫu nhiên hay không
+A0	Sinh offline từ checkpoint GAN A0 với cùng class/anchor/noise export manifest	Free-residual GAN scaffold
+A1	Sinh offline từ checkpoint GAN A1 theo đúng manifest, cùng GAN budget và loss	Factorized GAN candidate
+
+
+Real-only nếu sử dụng phải có định nghĩa khác ROS. Đề xuất v1.0: dùng empirical-prior real sampling như một benchmark bối cảnh, ghi nó không exposure-matched với ROS. Không dùng Real-only và ROS hai lần nếu cùng balanced resampling và schedule. Primary comparison là A1–A0 và A1–ROS/SIMPLE trong matched exposure.
+
+C toàn bộ arm: giữ cùng kiến trúc, optimizer, init seed pair, số update, batch size, class schedule, real/fake-slot schedule. ROS lấp fake-slot bằng mẫu thật theo manifest, các arm khác cùng class và anchor đã đăng ký. Nhiều C seeds trên một G checkpoint không biến thành nhiều G seeds độc lập.
+
+Đối chứng SIMPLE không chứng minh HSI label validity; nó chỉ kiểm chất lượng G học được vượt mức nhiễu cấu trúc tương ứng với cùng envelope. Có thể hiệu chỉnh biên độ của random residual bằng thống kê train-only trước khi đánh giá; không dùng A1 test/validation outcome để match hậu nghiệm.
+6. Center/context và conditional D
+- Pixel nhãn là tâm patch, nên đo center_displacement=||Delta[5,5,:]||₂, context_rms=sqrt(Σ_{(i,j)≠(5,5)}||Delta[i,j,:]||₂²/120); thêm tỷ lệ center/context, độ tương đồng phổ tâm, nearest-class proxy (train-only) và confusions của C downstream. Không lấy proxy làm ground-truth của fake.
+- Với D GAP hiện tại, log feature/score theo class và đối chiếu với đổi context-only/center-only diagnostics, chưa thay D. Nếu D chỉ theo context và fake không giúp F1, đó là tín hiệu mở nhánh center-aware D sau vòng A0/A1, không phải một sửa âm thầm giữa hai arm.
+- Spectral normalization (SN): khóa TensorFlow/Keras version, wrapper, các lớp dùng SN. Trong D_step, D update state theo contract. Trong G_step, gradient phải đi qua D(fake,c) tới fake/G nhưng toàn bộ trainable và nontrainable state của D (kể cả power-iteration vectors) không đổi. Test bằng snapshot pre/post; không mặc định trainable=False đóng băng mọi state.
+7. Development protocol và ma trận run cần khóa trước GPU dài
+1. Xuất split manifest gồm hash/index tọa độ train/dev/test, counts của đủ 16 class, center vs footprint overlap, train-only PCA/scaler fit scope, support bank chỉ từ train. Protocol B test đã được xem: không dùng làm selection signal.
+2. Có hai panel báo tách biệt: (i) all-16 limited-label dev cố gắng đo macro/per-class trên cùng 16 class, công khai footprint overlap; (ii) spatial stress panel chỉ những vùng/lớp đủ hình học, báo metrics của chính tập lớp đó, không gộp vào all-16 Macro-F1. Không hứa có spatial-disjoint all-16 P11 khi đếm chưa chứng minh khả thi.
+3. Trước full: baseline C có dev metric không bão hòa hoặc một phép đánh giá có sức phân biệt được lập luận; nếu mọi dev panel vẫn đạt trần, NO-GO dùng GPU để chọn A0/A1 theo accuracy. Pilot kỹ thuật vẫn được phép nhưng không gọi là nghiên cứu superiority.
+4. Đăng ký panel × GAN arm × G seed × G endpoint × C seed × augmentation manifest; số queries, checkpoint được chọn, thang đo primary và các cổng dừng. Không chọn mô hình theo test B hay chỉ theo một class nhỏ.
+5. A0/A1 primary: cùng số D/G updates, class/anchor schedule, batch size, loss, checkpoint endpoints và C exposure; runtime là outcome. Equal walltime là phân tích thứ cấp, không đánh đồng với same-updates.
+8. Phân bổ GPU, tiếp tục từ checkpoint và điểm dừng
+- Trước GPU dài (CPU/code): thẩm định singular spectrum; thống kê s_a, nearzero; feasibility development panel; dựng/config hash A0/A1, kiểm shape, freeze D SN state, gradient, noise-identity case, export determinism.
+- GPU kỹ thuật nhỏ: warmup compile và profiler với đúng hardware/backend: D_step, G_step (gồm paired noise nếu dùng), C, fake export, checkpoint, peak VRAM. Tính device-hours + overhead + dự phòng. 30 giờ là trần, không phải mặc định chi hết.
+- Dự án thăm dò: chỉ GO cho A0/A1 cùng ngân sách khi profiler cho thấy có thể thu được comparison cơ bản. Nếu không đủ, báo kết quả pilot có giới hạn và không kết luận H2.
+- Resume cùng recipe: lưu G/D/E_a, trainable và nontrainable state, optimizer moments/iterations, sampler position, RNG, config/git/data/PCA hashes, endpoints; test so một đoạn resume với uninterrupted. Không resume như cùng experiment nếu sửa loss, rank, split hoặc optimizer.
+- STOP/REVISE: identity collapse kéo dài; G bỏ noise; fake chỉ thay context và C không có downstream gain; SN state vô tình thay đổi ở G step; residual/regularizer gradient không hợp lệ; dev bão hòa; GAN không cho tín hiệu hơn ROS/SIMPLE; chi phí runtime vượt kế hoạch.
+9. Bảng diễn giải trước khi chạy
+Kết quả	Diễn giải cho phép
+A1 cải thiện so với A0 và ROS/SIMPLE trên dev đủ phân biệt, không chỉ một class, noise response có ích	GO xác nhận thêm; chưa có paper/SOTA claim
+A1>A0 nhưng A1≤ROS/SIMPLE	Có khác biệt giữa parameterizations nhưng chưa chứng minh GAN hữu ích
+A1>ROS, A0 tương tự A1	Shared patch-conditioned GAN có tín hiệu hữu ích; chưa chứng minh riêng low rank
+A1 giảm params nhưng F1 giảm	Trade-off quality–capacity, không gọi Pareto improvement
+Mẫu khác anchor/noise nhưng C không cải thiện	Regularizers chỉ tạo biến thiên, không phải chứng minh augmentation có ích
+Dev bão hòa / hiệu ứng do class cực nhỏ / chỉ một G seed	INCONCLUSIVE, không tuyên bố superiority/equivalence
+Đổi kiến trúc hoặc training recipe giữa các arm ngoài head	Mất khả năng gán khác biệt cho parameterization; cần chạy lại so sánh nếu claim causal
+
+
+10. Phạm vi quyết định hiện tại
+Được phép ngay: sửa đặc tả v1.0, CPU rank/scale/data audits, xây prototype kiểm shape/gradient/BN-SN state, chạy profiler giới hạn.
+
+Chưa được phép mặc định: full 30 device-hours, khẳng định A1 hữu ích, thêm Transformer/teacher/hardness/trust-region hay thay D riêng cho một arm, dùng test B để tuning.
+
+Bộ tệp cần để Codex triển khai đúng: source hiện tại + requirements/TF version; metadata Indian Pines/split tọa độ và PCA fit scope; config C/D và lịch training; sample GPU device/backend; các dữ liệu train support. Checkpoint V2 giúp lịch sử/diagnostics nhưng không phải điều kiện bắt buộc để tạo scaffold residual GAN mới.

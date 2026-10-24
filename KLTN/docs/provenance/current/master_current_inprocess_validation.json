@@ -1,0 +1,84 @@
+{
+  "timestamp_utc": "2026-10-23T00:51:23.558356+00:00",
+  "notebook": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\notebooks\\00_MASTER_CURRENT.ipynb",
+  "mode": "ordered in-process CPU validation; no Jupyter kernel",
+  "cuda_visible_devices": "",
+  "tensorflow_imported": false,
+  "cells": [
+    {
+      "cell": 2,
+      "status": "PASS"
+    },
+    {
+      "cell": 4,
+      "status": "PASS"
+    },
+    {
+      "cell": 6,
+      "status": "PASS"
+    },
+    {
+      "cell": 8,
+      "status": "PASS"
+    },
+    {
+      "cell": 10,
+      "status": "PASS"
+    },
+    {
+      "cell": 12,
+      "status": "PASS"
+    },
+    {
+      "cell": 14,
+      "status": "PASS"
+    },
+    {
+      "cell": 16,
+      "status": "PASS"
+    },
+    {
+      "cell": 18,
+      "status": "PASS"
+    },
+    {
+      "cell": 20,
+      "status": "PASS"
+    },
+    {
+      "cell": 22,
+      "status": "PASS"
+    },
+    {
+      "cell": 24,
+      "status": "PASS"
+    },
+    {
+      "cell": 26,
+      "status": "PASS"
+    },
+    {
+      "cell": 28,
+      "status": "PASS"
+    },
+    {
+      "cell": 29,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "error": null,
+  "output_root": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\master_reviews\\KLTN_MASTER_REVIEW_20261023T005110Z",
+  "endpoint_status": {
+    "status": "COMPLETE_6_CLASSIFIERS_SAVED_RESULTS",
+    "bundle": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\07_SELECTOR_ENDPOINT_ABLATION_ANALYSIS_20261019.zip",
+    "new_training_performed": false,
+    "new_test_inference_performed": false
+  },
+  "v3a_status": {
+    "status": "COMPLETE_3_SEEDS_NEGATIVE_ABLATION",
+    "bundle": "C:\\Users\\ADMIN\\OneDrive\\Tài liệu\\ChatGPT\\KLTN\\KLTN_clean\\outputs\\bundles\\08_V3A_RESULTS_ANALYSIS_20261019.zip",
+    "new_training_performed": false,
+    "new_test_inference_performed": false
+  }
+}
